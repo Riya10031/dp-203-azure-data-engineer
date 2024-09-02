@@ -29,18 +29,39 @@ You'll use a combination of a PowerShell script and an ARM template to provision
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
-
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
-2. Use the [>_] button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select PowerShell environment.
+    ![Azure portal with a cloud shell pane](./images/cloudshell(1).png)
+
+    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+
+    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
+
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+
+    ![Azure portal with a cloud shell pane](./images/powershell.png)
 
 
-    ![Azure portal with a cloud shell pane](./images/L14T1S1-i.png)
-    ![Azure portal with a cloud shell pane](./images/L14T1S1.png)
+1. On the **Getting Started** pop-up, select the following information:-
 
-3. In the Getting Started menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
-    ![Azure portal with a cloud shell pane](./images/L14T1S2.png)
+        ![Azure portal with a cloud shell pane](./images/gettingstarted.png)
+
+1. On the **Mount storage account** pop-up, select the following:
+
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
+
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount.png)
+
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+
+    ![Azure portal with a cloud shell pane](./images/close(1).png)
+    
+1. In the PowerShell pane, manually enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
