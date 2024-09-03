@@ -38,21 +38,23 @@ In this exercise, you'll use a script to provision a new Azure Databricks worksp
 
 3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/update1.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+4. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
+        ![Azure portal with a cloud shell pane](./images/gettingstarted1.png)
+      
+5. On the **Mount storage account** pop-up, select the following:
 
-4. If You dont have precreated storage account then select advanced setting.
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
-
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
-
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount1.png)
+      
 6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)

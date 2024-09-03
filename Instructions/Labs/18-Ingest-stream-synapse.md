@@ -73,6 +73,9 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 2. Select your Synapse workspace, and in its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab. Synapse Studio is a web-based interface that you can use to work with your Synapse Analytics workspace.
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio that you'll use to manage resources and perform data analytics tasks.
 4. On the **Manage** page, in the **SQL pools** section, select the **sql*xxxxxxx*** dedicated SQL pool row and then use its **&#9655;** icon to resume it.
+
+    ![Resume](./images/DP-203-lab18-new-01.jpg)
+
 5. While you wait for the SQL pool to start, switch back to the browser tab containing the Azure portal and re-open the cloud shell pane.
 6. In the cloud shell pane, enter the following command to run a client app that sends 100 simulated orders to Azure Event Hubs:
 
@@ -108,7 +111,7 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 
 ### Task 2.3: Create an input for the event data stream
 
-1. On the **ingest-orders** overview page, select the **Inputs** page. Use the **Add input** menu to add an **Event Hub** input with the following properties:
+1. On the **ingest-orders** overview page, select the **Inputs** page under **Job topology**. Use the **+ Add input** menu to add an **Event Hub** input with the following properties:
     - **Input alias**: `orders`
     - **Select Event Hub from your subscriptions**: Selected
     - **Subscription**: Your Azure subscription
@@ -125,7 +128,7 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 
 ### Task 2.4: Create an output for the SQL table
 
-1. View the **Outputs** page for the **ingest-orders** Stream Analytics job. Then use the **Add output** menu to add an **Azure Synapse Analytics** output with the following properties:
+1. View the **Outputs** page for the **ingest-orders** Stream Analytics job under **Job topology**. Then use the **+ Add output** menu to add an **Azure Synapse Analytics** output with the following properties:
     - **Output alias**: `FactOrder`
     - **Select Azure Synapse Analytics from your subscriptions**: Selected
     - **Subscription**: Your Azure subscription
@@ -160,7 +163,10 @@ Let's start by ingesting a stream of data directly into a table in an Azure Syna
 ### Task 2.6: Run the streaming job to ingest order data
 
 1. View the **Overview** page for the **ingest-orders** Stream Analytics job, and on the **Properties** tab review the **Inputs**, **Query**, **Outputs**, and **Functions** for the job. If the number of **Inputs** and **Outputs** is 0, use the **&#8635; Refresh** button on the **Overview** page to display the **orders** input and **FactTable** output.
-2. Select the **&#9655; Start** button, and start the streaming job now. Wait until you are notified that the streaming job started successfully.
+2. Select the **&#9655; Start job** button, and then click on **Start** to start the streaming job now. Wait until you are notified that the streaming job started successfully.
+
+    ![Start Job](./images/DP-203-lab18-new-02.jpg)
+
 3. Re-open the cloud shell pane and re-run the following command to submit another 100 orders.
 
     ```
@@ -199,14 +205,14 @@ So far, you've seen how to use a Stream Analytics job to ingest messages from a 
 
 ### Task 3.2: Create an input for the raw order data
 
-1. On the **aggregate-orders** overview page, select the **Inputs** page. Use the **Add input** menu to add an **Event Hub** input with the following properties:
+1. On the **aggregate-orders** overview page, select the **Inputs** page. Use the **+ Add input** menu to add an **Event Hub** input with the following properties:
     - **Input alias**: `orders`
     - **Select Event Hub from your subscriptions**: Selected
     - **Subscription**: Your Azure subscription
     - **Event Hub namespace**: Select the **events*xxxxxxx*** Event Hubs namespace
     - **Event Hub name**: Select the existing **eventhub*xxxxxxx*** event hub.
     - **Event Hub consumer group**: Select **Use Existing**, then the existing **$Default** consumer group
-    - **Authentication mode**: Create system assigned managed identity
+    - **Authentication mode**: Create Managed Identity: System assigned
     - **Partition key**: *Leave blank*
     - **Event serialization format**: JSON
     - **Encoding**: UTF-8
@@ -214,7 +220,7 @@ So far, you've seen how to use a Stream Analytics job to ingest messages from a 
 
 ### Task 3.3: Create an output for the data lake store
 
-1. View the **Outputs** page for the **aggregate-orders** Stream Analytics job. Then use the **Add output** menu to add a **Blob storage/ADLS Gen2** output with the following properties:
+1. View the **Outputs** page for the **aggregate-orders** Stream Analytics job. Then use the **+ Add output** menu to add a **Blob storage/ADLS Gen2** output with the following properties:
     - **Output alias**: `datalake`
     - **Select Select Blob storage/ADLS Gen2 from your subscriptions from your subscriptions**: Selected
     - **Subscription**: Your Azure subscription
@@ -280,6 +286,8 @@ So far, you've seen how to use a Stream Analytics job to ingest messages from a 
             HEADER_ROW = TRUE
         ) AS [result]
     ```
+
+    > **Note**: In **https://datalakexxxxxxx.dfs.core.windows.net/files/2023/**** link change the **datalakexxxxxxx** with the storage acount name present in **dp203-xxxxx** resource group and update the year also in the link with the present year.
 
 8. Use the **&#9655; Run** button to run the SQL query and view the results, which show the quantity of each product ordered in five-second periods.
 

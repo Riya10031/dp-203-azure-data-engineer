@@ -32,49 +32,40 @@ In this exercise, you'll need a premium-tier Azure Databricks workspace.
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+    ![Azure portal with a cloud shell pane](./images/L19T1S3.png)
 
     >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+3. In the Getting Started menu, choose **No storage account required (1)**, select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/L19T1S4.png)
 
     > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
 
     ![Azure portal with a cloud shell pane](./images/25-4.png)
 
-
-4. If You dont have precreated storage account then select advanced setting.
-
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
-
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
-
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+4. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
-7. In the PowerShell pane, enter the following commands to clone this repo:
+5. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone -b prod https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
+6. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/26
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+7. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-10. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [What is data warehousing on Azure Databricks?](https://learn.microsoft.com/azure/databricks/sql/) article in the Azure Databricks documentation.
+8. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [What is data warehousing on Azure Databricks?](https://learn.microsoft.com/azure/databricks/sql/) article in the Azure Databricks documentation.
 
 ## Task 2: View and start a SQL Warehouse
 
@@ -154,12 +145,13 @@ Saving a query makes it easy to retrieve the same data again at a later time.
 
 Dashboards are a great way to share data tables and visualizations with business users. You can schedule the dashboards to be refreshed periodically, and emailed to subscribers.
 
-  **Congratulations** on completing the lab! Now, it's time to validate it. Here are the steps:
+ <validation step="e098cf8a-1f27-46cf-8e9a-7771c0eafa37" />
+ 
+ > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+ > - If you receive a success message, you can proceed to the next task.
+ > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+ > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
  ## Review
 

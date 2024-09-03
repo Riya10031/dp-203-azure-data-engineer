@@ -39,49 +39,46 @@ You'll use a combination of a PowerShell script and an ARM template to provision
 
 3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/L19T1S3.png)
 
     > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
 
     ![Azure portal with a cloud shell pane](./images/25-4.png)
 
 
-4. If You dont have precreated storage account then select advanced setting.
+ 4. In the Getting Started menu, choose **No storage account required (1)**, select your default **Subscription (2)** from the dropdown and click on **Apply (3)**.
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
+    ![Azure portal with a cloud shell pane](./images/L19T1S4.png)
 
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
-
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+5. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
 
-7. In the PowerShell pane, enter the following commands to clone the repo containing this exercise:
+6. In the PowerShell pane, enter the following commands to clone the repo containing this exercise:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+7. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/19
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+8. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
-10. While you are waiting for the script to complete, continue with the next task.
+9. While you are waiting for the script to complete, continue with the next task.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  <validation step="1a5e7a33-b485-4ed2-8a73-0baa1faffc34" />
+  
+  >**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  
+  > - If you receive a success message, you can proceed to the next task.
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Task 2: Create a Power BI workspace
 
@@ -105,12 +102,13 @@ In the Power BI service, you organize datasets, reports, and other resources in 
    
 1. When viewing your workspace, note its globally unique identifier (GUID) in the page URL (which should be similar to `https://app.powerbi.com/groups/<GUID>/list`). You will need this GUID later.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  <validation step="e073b771-eca2-47f0-b2d3-274191fca853" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  >**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  
+  > - If you receive a success message, you can proceed to the next task.
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Task 3: Use Azure Stream Analytics to process streaming data
 
@@ -134,12 +132,13 @@ An Azure Stream Analytics job defines a perpetual query that operates on streami
 
 4. Wait for deployment to complete and then go to the deployed Stream Analytics job resource.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  <validation step="8665d82e-4eec-4f68-84ad-af62cd131736" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  >**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  
+  > - If you receive a success message, you can proceed to the next task.
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ### Task 3.2: Create an input for the event data stream
 
@@ -156,12 +155,13 @@ An Azure Stream Analytics job defines a perpetual query that operates on streami
     - **Encoding**: UTF-8
 2. Save the input and wait while it is created. You will see several notifications. Wait for a **Successful connection test** notification.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  <validation step="c2612022-587b-40fa-92e0-5ebd5629b6e2" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  >**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  
+  > - If you receive a success message, you can proceed to the next task.
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ### Task 3.3: Create an output for the Power BI workspace
 
@@ -175,12 +175,13 @@ An Azure Stream Analytics job defines a perpetual query that operates on streami
 
 2. Save the output and wait while it is created. You will see several notifications. Wait for a **Successful connection test** notification.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  <validation step="6c993d71-c97c-447d-bcb5-e319eef38b37" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  >**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  
+  > - If you receive a success message, you can proceed to the next task.
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ### Task 3.4: Create a query to summarize the event stream
 
@@ -218,12 +219,13 @@ An Azure Stream Analytics job defines a perpetual query that operates on streami
 4. While the order client app is running, switch to the Power BI app browser tab and view your workspace.
 5. Refresh the Power BI app page until you see the **realtime-data** dataset in your workspace. This dataset is generated by the Azure Stream Analytics job.
 
-  **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  <validation step="a216e391-6b17-48d1-b37b-128a3bc9ab61" />
 
-  > - Navigate to the Lab Validation tab, from the upper right corner in the lab guide section.
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  >**Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  
+  > - If you receive a success message, you can proceed to the next task.
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Task 4: Visualize the streaming data in Power BI
 

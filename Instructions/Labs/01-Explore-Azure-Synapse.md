@@ -28,7 +28,7 @@ An Azure *Synapse Analytics workspace* provides a central point for managing dat
 In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision Azure Synapse Analytics.
 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/25-1.png)
 
@@ -36,54 +36,61 @@ In this exercise, you'll use a combination of a PowerShell script and an ARM tem
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
-3. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/25-2.png)
+    ![Azure portal with a cloud shell pane](./images/update1.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+1. On the **Getting Started** pop-up, select the following information:-
 
-    ![Azure portal with a cloud shell pane](./images/25-4.png)
+    - Select **Mount storage account (1)**
+    - Storage account subscription: **Select the existing subscription (2)**
+    - Select **Apply (3)**
 
+        ![Azure portal with a cloud shell pane](./images/gettingstarted1.png)
 
-4. If You dont have precreated storage account then select advanced setting.
+1. On the **Mount storage account** pop-up, select the following:
 
-    ![Azure portal with a cloud shell pane](./images/25-2a.png)
+    - **We will create a storage account for you (1)**
+    - Select **Next (2)**
 
-5. Keep all settings default and give unique storage account name and in file share section write **None**.
+        ![Azure portal with a cloud shell pane](./images/mount-storageaccount1.png)
 
-    ![Azure portal with a cloud shell pane](./images/25-3.png)
-
-6. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview)
 
     ![Azure portal with a cloud shell pane](./images/25-5.png)
 
-7. In the PowerShell pane, enter the following commands to clone this repo:
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203 -f
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-8. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203/Allfiles/labs/01
     ./setup.ps1
     ```
 
-9. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
-10. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
 
     > **Note**: Be sure to remember this password! Additionally, the password cannot contain all or part of the login name.
 
-11. Wait for the script to complete - this typically takes around 20 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Analytics?](https://docs.microsoft.com/azure/synapse-analytics/overview-what-is) article in the Azure Synapse Analytics documentation.
+1. Wait for the script to complete - this typically takes around 20 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Analytics?](https://docs.microsoft.com/azure/synapse-analytics/overview-what-is) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Explore Synapse Studio
 
 *Synapse Studio* is a web-based portal in which you can manage and work with the resources in your Azure Synapse Analytics workspace.
 
 1. When the setup script has finished running, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and notice that this resource group contains your Synapse workspace, a Storage account for your data lake, an Apache Spark pool and a Dedicated SQL pool.
+
 2. Select your Synapse workspace, and in its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab. Synapse Studio is a web-based interface that you can use to work with your Synapse Analytics workspace.
+
+   ![](./images/update5.png)
+
+
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio that you'll use to manage resources and perform data analytics tasks, as shown here:
 
     ![Image showing the expanded Synapse Studio menu to manage resources and perform data analytics tasks](./images/synapse-studio.png)
@@ -109,8 +116,11 @@ One of the key tasks you can perform with Azure Synapse Analytics is to define *
 ###  Task 3.1: Use the Copy Data task to create a pipeline
 
 1. In Synapse Studio, on the **Home** page, select **Ingest** to open the **Copy Data** tool
+
+   ![](./images/update6.png)
+
 2. In the Copy Data tool, on the **Properties** step, ensure that **Built-in copy task** and **Run once now** are selected, and click **Next >**.
-3. On the **Source** step, in the **Dataset** substep, select the following settings:
+3. On the **Source** step, in the **Dataset** substep, select the following settings and click on **Create**
     - **Source type**: All
     - **Connection**: *Create a new connection, and in the **New Connection** pane that appears, on the **Generic protocol** tab, select **HTTP**. Then continue and create a connection to a data file using the following settings:*
         - **Name**: Products
@@ -119,6 +129,9 @@ One of the key tasks you can perform with Azure Synapse Analytics is to define *
         - **Base URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/01/adventureworks/products.csv`
         - **Server Certificate Validation**: Enable
         - **Authentication type**: Anonymous
+
+          ![](./images/update7.png)
+          
 4. After creating the connection, on the **Source data store** page, ensure the following settings are selected, and then select **Next >**:
     - **Relative URL**: *Leave blank*
     - **Request method**: GET
@@ -273,6 +286,9 @@ While SQL is a common language for querying structured datasets, many data analy
 
 1. In Synapse Studio, if the **files** tab you opened earlier containing the **products.csv** file is no longer open, on the **Data** page, browse **product_data** folder. Then right-click **products.csv**, point to **New notebook**, and select **Load to DataFrame**.
 2. In the **Notebook 1** pane that opens, in the **Attach to** list, select the **sparkxxxxxxx** Spark pool and ensure that the **Language** is set to **PySpark (Python)**.
+
+    ![](./images/update8.png)
+
 3. Review the code in the first (and only) cell in the notebook, which should look like this:
 
     ```Python
