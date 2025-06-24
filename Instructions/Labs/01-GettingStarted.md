@@ -90,7 +90,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. To extend the duration of the lab, kindly click the **Hourglass** icon in the top right corner of the lab environment. 
 
-    ![Manage Your Virtual Machine](../Labs/images/gext.png)
+    ![Manage Your Virtual Machine](../Labs/images/24-06-25-g1-hr.png)
 
     >**Note:** You will get the **Hourglass** icon when 10 minutes are remaining in the lab.
 
@@ -102,18 +102,18 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
  
 ## Let's Get Started with Azure Portal
  
-1. In the **JumpVM**, click on the **Azure portal shortcut** of the Microsoft Edge browser which is created on the desktop.
+1. In the **JumpVM**, click on the **Azure portal shortcut** of the Microsoft Edge browser, which is created on the desktop.
  
    ![Launch Azure Portal](../Labs/images/sc900-image(1).png)
 
  
-1. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+1. On the **Sign in to Microsoft Azure** tab, you will see the login screen, in that enter the following email/username, and click on **Next**.
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
        ![Enter Your Username](../Labs/images/sc900-image-1.png)
  
-1. Next, provide your password:
+1. Now enter the following password and click on **Sign in**.
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
