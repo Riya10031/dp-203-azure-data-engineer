@@ -65,7 +65,7 @@ In the integrated environment, the lab VM serves as the designated workspace, wh
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](../Labs/images/24-06-25-g2.png)
+![Explore Lab Resources](../Labs/images/24-06-25-g2.1.png)
  
 ## Utilizing the Split Window Feature
  
