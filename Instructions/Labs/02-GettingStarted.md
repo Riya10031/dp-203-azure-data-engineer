@@ -48,7 +48,7 @@ The architecture for this lab involves the following key components:
  
 Once you're ready to dive in, your virtual machine and guide will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Labs/images/24-06-25-g1.png)
+![Access Your VM and Lab Guide](../Labs/images/24-06-25-g2-vm.png)
 
 ### Virtual Machine & Guide
  
@@ -60,7 +60,7 @@ In the integrated environment, the lab VM serves as the designated workspace, wh
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](../Labs/images/24-06-25-g2.png)
+![Explore Lab Resources](../Labs/images/24-06-25-g2.1.png)
  
 ## Utilizing the Split Window Feature
  
@@ -101,19 +101,19 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
    ![Launch Azure Portal](../Labs/images/sc900-image(1).png)
 
  
-2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+2. On the **Sign in to Microsoft Azure** tab, you will see the login screen, in that enter the following email/username, and click on **Next**.
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
        ![Enter Your Username](../Labs/images/sc900-image-1.png)
  
-3. Next, provide your password:
+3. Now enter the following password and click on **Sign in**.
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
       ![Enter Your Password](../Labs/images/sc900-image-2.png)
  
-4. If prompted to stay signed in, you can click "No."
+4. If prompted to stay signed in, you can click **No**.
 
    ![](../Labs/images/Sign-in-no.png)
 
