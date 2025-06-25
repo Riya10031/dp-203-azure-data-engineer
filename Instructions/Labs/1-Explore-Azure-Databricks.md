@@ -25,7 +25,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
    
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
 
     >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
 
@@ -71,7 +71,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-6.png)
 
-1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of **cloud shell**
+1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of the **cloud shell**
 
    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-7.png)
 
