@@ -1,4 +1,4 @@
-# Getting started with Azure Databricks Analytics & Engineering Scenarios
+# Use a SQL Warehouse in Azure Databricks
 
 ### Overall Estimated Duration: 60 Minutes
 
