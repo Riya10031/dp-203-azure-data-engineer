@@ -4,7 +4,7 @@
 
 You can use notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables. When you need to orchestrate these tasks as part of a data engineering pipeline, you can use Azure Data Factory. 
 
-In this lab, you'll explore about notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables.
+In this lab, you'll explore notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables.
 
 ### Lab Objectives
 
@@ -22,7 +22,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace 
 1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
-    ![Azure portal with a cloud shell pane](./images/25-1.png)
+    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
 
     >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
 
@@ -30,26 +30,26 @@ In this task, you'll use a script to provision a new Azure Databricks workspace 
 
 1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/21051.png)
+    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-1.png)
 
 1. Within the Getting Started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
 
-   ![](./images/21052.png)
+   ![](./images/24-06-25-l1-3.png)
 
 1. Within the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
 
-   ![](./images/21053.png)
+   ![](./images/24-06-25-l1-2.png)
 
 
 1. If you are prompted to create storage for your Cloud Shell, ensure your **Subscription** is selected, Please make sure you have selected your **Resource Group** which is **Azure-Databricks (1)** , select **Region** from the drop-down **(US) East US (2)** and enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)** for the **Storage account name** and enter **fileshare1 (4)** for the **File share name**, then click on **Create (5)**.
    
-    ![Create storage by clicking confirm.](./images/21054.png "Create storage advanced settings")
+    ![Create storage by clicking confirm.](./images/24-06-25-l1-4.png "Create storage advanced settings")
 
-1. You can see a pop up appearing **Depployment is in Progress** ,Wait for PowerShell terminal to start.
+1. You can see a pop-up appearing **Deployment is in Progress**, wait for the PowerShell terminal to start.
 
-    ![](./images/ad-task-1-2.png)
+    ![](./images/24-06-25-l1-5.png)
 
-1. In the PowerShell pane, paste the following commands and Click enter to clone this repo:
+1. In the PowerShell pane, paste the following commands and click Enter to clone this repo:
 
     ```
     rm -r dp-203 -f
@@ -81,7 +81,7 @@ In this task, you'll import an existing notebook that contains some Python code.
 
 1. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
 
-   ![](./images/ad-task-1-3.png) 
+   ![](./images/24-06-25-l1-8.png) 
   
 2. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
 
@@ -99,7 +99,7 @@ In this task, you'll import an existing notebook that contains some Python code.
 
 6. At the top of the page, in the **&#8942; (3)** menu next to your user name, select **Import (4)**.
 
-   ![Create storage by clicking confirm.](./images/ad-task3-1.png)
+   ![Create storage by clicking confirm.](./images/24-06-25-12-1.png)
   
 8. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/27/Process-Data.ipynb` **(2)** and then click on **Import (3)**.
 
