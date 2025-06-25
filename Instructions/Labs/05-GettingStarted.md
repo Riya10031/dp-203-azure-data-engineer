@@ -34,7 +34,7 @@ Participants should have:
 
 ## Architecture
 
-The architecture involves using **Azure Databricks** platform and **Azure Data Factory** to automate data processing workflows. Azure Databricks serves as the platform for running data engineering tasks, such as processing and transforming data using Spark clusters. Azure Data Factory is used to orchestrate these tasks by creating a pipeline that triggers the execution of the Databricks notebooks. The **pipeline** is linked to the Databricks workspace via a linked service, using an access token for authentication. **Data processing workflows** are initiated through this pipeline, with the output of the Databricks notebook saved in Azure storage or Databricks File System (DBFS), allowing seamless integration between the two services to automate data processing and management.
+The architecture involves using the **Azure Databricks** platform and **Azure Data Factory** to automate data processing workflows. Azure Databricks serves as the platform for running data engineering tasks, such as processing and transforming data using Spark clusters. Azure Data Factory is used to orchestrate these tasks by creating a pipeline that triggers the execution of the Databricks notebooks. The **pipeline** is linked to the Databricks workspace via a linked service, using an access token for authentication. **Data processing workflows** are initiated through this pipeline, with the output of the Databricks notebook saved in Azure storage or Databricks File System (DBFS), allowing seamless integration between the two services to automate data processing and management.
 
 ## Architecture Diagram
 
@@ -54,7 +54,7 @@ The architecture for this lab involves the following key components:
  
 Once you're ready to dive in, your virtual machine and guide will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Labs/images/labguide-1.png)
+![Access Your VM and Lab Guide](../Labs/images/24-06-25-g5-vm.png)
 
 ### Virtual Machine & Guide
  
@@ -66,7 +66,7 @@ In the integrated environment, the lab VM serves as the designated workspace, wh
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](../Labs/images/24-06-25-g2.png)
+![Explore Lab Resources](../Labs/images/24-06-25-g2.1.png)
  
 ## Utilizing the Split Window Feature
  
@@ -82,7 +82,7 @@ Feel free to **start, stop, or restart** your virtual machine as needed from the
 
 ## Guide Zoom In/Zoom Out
 
-To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
 ![](images/24-06-25-g5.png)
 
@@ -90,7 +90,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. To extend the duration of the lab, kindly click the **Hourglass** icon in the top right corner of the lab environment. 
 
-    ![Manage Your Virtual Machine](../Labs/images/gext.png)
+    ![Manage Your Virtual Machine](../Labs/images/24-06-25-g1-hr.png)
 
     >**Note:** You will get the **Hourglass** icon when 10 minutes are remaining in the lab.
 
@@ -107,19 +107,19 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
    ![Launch Azure Portal](../Labs/images/sc900-image(1).png)
 
  
-2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+2. On the **Sign in to Microsoft Azure** tab, you will see the login screen, in that enter the following email/username, and click on **Next**.
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
        ![Enter Your Username](../Labs/images/sc900-image-1.png)
  
-3. Next, provide your password:
+3. Now enter the following password and click on **Sign in**.
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
       ![Enter Your Password](../Labs/images/sc900-image-2.png)
  
-4. If prompted to stay signed in, you can click "No."
+4. If prompted to stay signed in, you can click **No**.
 
    ![](../Labs/images/Sign-in-no.png)
 
