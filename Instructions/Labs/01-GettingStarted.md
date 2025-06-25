@@ -1,4 +1,4 @@
-# Getting started with Azure Databricks Analytics & Engineering Scenarios
+# Explore Azure Databricks
 
 ### Overall Estimated Duration: 60 Minutes
 
@@ -81,7 +81,7 @@ Feel free to **start, stop, or restart** your virtual machine as needed from the
 
 ## Lab Guide Zoom In/Zoom Out
 
-To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+To adjust the zoom level for the environment page, click the **A↕: 100%** icon located next to the timer in the lab environment.
 
 ![](images/24-06-25-g5.png)
 
@@ -119,7 +119,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
  
       ![Enter Your Password](../Labs/images/sc900-image-2.png)
  
-1. If prompted to stay signed in, you can click "No."
+1. If prompted to stay signed in, you can click **No**.
 
    ![](../Labs/images/Sign-in-no.png)
 
