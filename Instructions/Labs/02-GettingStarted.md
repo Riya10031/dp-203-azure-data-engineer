@@ -1,4 +1,4 @@
-# Getting started with Azure Databricks Analytics & Engineering Scenarios
+# Use Spark in Azure Databricks
 
 ### Overall Estimated Duration: 60 Minutes
 
@@ -28,7 +28,7 @@ Participants should have:
 
 ## Architecture
 
-The architecture involves using **Azure Databricks** platform, which integrates Apache Spark for distributed data processing. It begins with provisioning an Azure Databricks workspace within the Azure ecosystem, ensuring seamless integration with other Azure services. The core processing environment is a **Spark cluster**, consisting of a driver node for coordination and worker nodes for executing distributed computations. This cluster is tailored to specific configurations, such as runtime versions and compute resources, to optimize performance. **Notebooks** serve as the interactive interface for executing code, visualizing data, and documenting the workflow. Together, these components enable scalable, efficient, and collaborative data engineering and analysis tasks within the Azure cloud environment.
+The architecture involves using the **Azure Databricks** platform, which integrates Apache Spark for distributed data processing. It begins with provisioning an Azure Databricks workspace within the Azure ecosystem, ensuring seamless integration with other Azure services. The core processing environment is a **Spark cluster**, consisting of a driver node for coordination and worker nodes for executing distributed computations. This cluster is tailored to specific configurations, such as runtime versions and compute resources, to optimize performance. **Notebooks** serve as the interactive interface for executing code, visualizing data, and documenting the workflow. Together, these components enable scalable, efficient, and collaborative data engineering and analysis tasks within the Azure cloud environment.
 
 ## Architecture Diagram
 
@@ -84,15 +84,15 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
 1. To extend the duration of the lab, kindly click the **Hourglass** icon in the top right corner of the lab environment. 
 
-    ![Manage Your Virtual Machine](../Labs/images/gext.png)
+    ![Manage Your Virtual Machine](../Labs/images/24-06-25-g1-hr.png)
 
     >**Note:** You will get the **Hourglass** icon when 10 minutes are remaining in the lab.
 
-2. Click **OK** to extend your lab duration.
+1. Click **OK** to extend your lab duration.
  
    ![Manage Your Virtual Machine](../Labs/images/gext2.png)
 
-3. If you have not extended the duration prior to when the lab is about to end, a pop-up will appear, giving you the option to extend. Click **OK** to proceed.
+1. If you have not extended the duration prior to when the lab is about to end, a pop-up will appear, giving you the option to extend. Click **OK** to proceed.
  
 ## Let's Get Started with Azure Portal
  
@@ -101,27 +101,27 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
    ![Launch Azure Portal](../Labs/images/sc900-image(1).png)
 
  
-2. On the **Sign in to Microsoft Azure** tab, you will see the login screen, in that enter the following email/username, and click on **Next**.
+1. On the **Sign in to Microsoft Azure** tab, you will see the login screen, in that enter the following email/username, and click on **Next**.
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
        ![Enter Your Username](../Labs/images/sc900-image-1.png)
  
-3. Now enter the following password and click on **Sign in**.
+1. Now enter the following password and click on **Sign in**.
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
       ![Enter Your Password](../Labs/images/sc900-image-2.png)
  
-4. If prompted to stay signed in, you can click **No**.
+1. If prompted to stay signed in, you can click **No**.
 
    ![](../Labs/images/Sign-in-no.png)
 
-6. If **Action Required** pop-up window appears, click on **Ask later**.
+1. If the **Action Required** pop-up window appears, click on **Ask later**.
 
      ![](../Labs/images/24-06-25-g6.png)
  
-7. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Cancel" to skip the tour.
+1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Cancel" to skip the tour.
 
     ![](../Labs/images/Azure-cancel-tour.png)
 
