@@ -1,4 +1,4 @@
-# Use Spark in Azure Databricks
+# Getting started with Azure Databricks Analytics & Engineering Scenarios
 
 ### Overall Estimated Duration: 60 Minutes
 
