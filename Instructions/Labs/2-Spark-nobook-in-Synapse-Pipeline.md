@@ -18,38 +18,50 @@ You'll need an Azure Synapse Analytics workspace with access to data lake storag
 
 In this task, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
-    
-    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the **Azure portal**.
 
-    ![Azure portal with a cloud shell pane](./images/cl2.png)
-   
-2. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+    ![Azure portal with a cloud shell pane](images/DA-image1.png)
 
-   ![Azure portal with a cloud shell pane](./images/cl3.png)
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (Bash or PowerShell). If so, select PowerShell.
 
-3. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+    ![Azure portal with a cloud shell pane](images/DA-image2.png)
 
-4. In the PowerShell pane, enter the following commands to clone this repository:
+    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
 
-    ```powershell
-    rm -r dp-203 -f
-    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
+1. On Getting started window choose **Mount storage account(1)** then under Storage account subscription select your available **subscription (2)** from the dropdown and click on **Apply (3)**.
+
+   ![Azure portal with a cloud shell pane](images/DA-image3.png)
+
+1. Within the Mount storage account pane, select **we will create a storage account for you (1)** and click **Next (2)**.
+
+    ![Azure portal with a cloud shell pane](images/DA-image4.png)
+
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+
+1. In the PowerShell pane, manually enter the following commands to clone this repo:
+
+    ```
+    rm -r dp-203-azure-data-engineer -f
+    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
+
     ```
 
-5. After the repository has been cloned, enter the following commands to change to the folder for this exercise, and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
-    ```powershell
-    cd dp-203/Allfiles/labs/11
+    ```
+    cd dp-203-azure-data-engineer/Allfiles/labs/11
     ./setup.ps1
     ```
-    
-6. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
-7. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+
+1. If prompted, provided resource group already exists. Are you sure want to update it. Enter **Y** and press enter.
+
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+
+1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
 
     > **Note**: Be sure to remember this password!
 
-8. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you're waiting, review the [Azure Synapse Pipelines](https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-performance-pipelines) article in the Azure Synapse Analytics documentation.
+1. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you're waiting, review the [Azure Synapse Pipelines](https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-performance-pipelines) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Run a Spark notebook interactively
 
@@ -57,17 +69,19 @@ Before automating a data transformation process with a notebook, it can be usefu
 
 In this task, you will be using synapse workspace to run the Spark Notebook interactively.
 
-1. After the script has completed, in the Azure portal, go to the dp203-xxxxxxx resource group that it created, and select your Synapse workspace.
+1. After the script has completed, in the Azure portal, go to the **dp203-xxxxxxx** resource group that it created, and select your Synapse workspace.
 
 2. In the **Overview** page for your Synapse Workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
 
-   ![](./images/labimg2.png)
+   ![](./images/DA-image38.png)
 
 3. On the left side of Synapse Studio, use the ›› icon to expand the menu - this reveals the different pages within Synapse Studio.
 
-4. On the **Data** page, view the Linked tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapsexxxxxxx (Primary - datalakexxxxxxx)**.
+    ![](./images/DA-image39.png)
 
-   ![](./images/labimg3.png)
+4. On the **Data (1)** page, view the **Linked (2)** tab and verify that your workspace includes a link to your **Azure Data Lake Storage Gen2 (3)** storage account, which should have a name similar to **synapsexxxxxxx (Primary - datalakexxxxxxx) (4)**.
+
+   ![](./images/DA-image40.png)
 
 5. Expand your storage account and verify that it contains a file system container named **files (primary)**.
 
@@ -75,49 +89,55 @@ In this task, you will be using synapse workspace to run the Spark Notebook inte
 
    ![](./images/labimg5.png)
 
-7. Open the **data** folder and view the CSV files it contains. Right-click any of the files and select **Preview** to see a sample of the data. Close the preview when finished.
+7. Right-click any of the files and select **Preview** to see a sample of the data. Select **OK** to close the preview when finished.
 
-8. Right-click any of the files and select **Preview** to see the data it contains. Note that the files contain a header row, so you can select the option to display column headers.
+    ![](./images/DA-image41.png)
 
-9. Close the preview. Then download the **Spark Transform.ipynb** by using the link below through browser.
+    ![](./images/DA-image42.png)
+
+8. Open a new tab in the browser, then download the **Spark Transform.ipynb** by using the link below.
 
     ```
-    https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/tree/master/Allfiles/labs/11/notebooks
+    https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/blob/guidedlabs/Allfiles/labs/11/notebooks/Spark%20Transform.ipynb
     ```
     ![download notebook file from GitHub](./images/downloadt.png)
 
 
-10. Then on **Develop** page, expand **Notebooks** click on the + Import options
+9. Navigate back to the **Synapse Analytics** page. Then on **Develop (1)** page, click on the **+ (2)** > **Import (3)** option.
 
-    ![Spark Notebook import](./image/../images/importt.png)
+    ![Spark Notebook import](./image/../images/DA-image43.png)
         
-11. Select the file you just downloaded and saved as **Spark Transfrom.ipynb**.
-12. Attach the notebook to your **spark*xxxxxxx*** Spark pool.
+10. Select the file you just downloaded. In the notebook toolbar, attach the notebook to your **spark*xxxxxxx*** Spark pool and then use the **&#9655; Run All** button to run all of the code cells in the notebook.
 
-    ![Spark Notebook import](./image/../images/sparkpoolt.png)
+    ![Spark Notebook import](./image/../images/DA-image44.png)
 
-13. Review the notes in the notebook and run the code cells.
+11. Review the notes in the notebook and run each code cells.
 
-    > **Note**: The first code cell will take a few minutes to run because the Spark pool must be started. Subsequent cells will run more quickly. 
+    > **Note**: The Spark session may take a few minutes to start before the code cells can run. 
 
-14. Review the code the notebook contains, noting that it:
+12. Review the code the notebook contains, noting that it:
     - Sets a variable to define a unique folder name.
     - Loads the CSV sales order data from the **/data** folder.
     - Transforms the data by splitting the customer name into multiple fields.
     - Saves the transformed data in Parquet format in the uniquely named folder.
-   
-15. In the notebook toolbar, attach the notebook to your **spark*xxxxxxx*** Spark pool and then use the **&#9655; Run All** button to run all of the code cells in the notebook.
-  
-    The Spark session may take a few minutes to start before the code cells can run.
-16. After all of the notebook cells have run, note the name of the folder in which the transformed data has been saved.
 
-17. Switch to the **files** tab (which should still be open) and view the root **files** folder. If necessary, in then **More** menu, select **Refresh** to see the new folder. Then open it to verify that it contains Parquet files.
+13. After all of the notebook cells have run, note the name of the folder in which the transformed data has been saved. Select **Publish** and select **Publish** again.
 
-18. Return to the root **files** folder, then select the uniquely named folder generated by the notebook and in the **New SQL Script** menu, select **Select TOP 100 rows**.
+14. Select **Data**, open **files** folder and view the root **files** folder. If necessary, in then **More** menu, select **Refresh** to see the new folder. Then open it to verify that it contains Parquet files.
 
-19. In the **Select TOP 100 rows** pane, set the file type to **Parquet format** and apply the change.
+    ![Spark Notebook import](./image/../images/DA-image45.png)
 
-20. In the new SQL Script pane that opens, use the **&#9655; Run** button to run the SQL code and verify that it returns the transformed sales order data.
+15. Return to the root **files** folder, then select the **uniquely named folder (1)** generated by the notebook and in the **New SQL Script (2)** menu, select **Select TOP 100 rows (3)**.
+
+    ![Spark Notebook import](./image/../images/DA-image46.png)
+
+16. In the **Select TOP 100 rows** pane, set the file type to **Parquet format** and apply the change.
+
+    ![Spark Notebook import](./image/../images/DA-image47.png)
+
+17. In the new SQL Script pane that opens, use the **&#9655; Run** button to run the SQL code and verify that it returns the transformed sales order data.
+
+    ![Spark Notebook import](./image/../images/DA-image48.png)
 
 ## Task 3: Run the notebook in a pipeline
 
@@ -138,6 +158,7 @@ In this task, you will automate transformation process by encapsulating the note
 4. In the toolbar, use the **Publish** button to save the changes.
 
     ![Spark Notebook import](./image/../images/publisht.png)
+
 ### Task 3.2: Create a pipeline
 
 1. In Synapse Studio, select the **Integrate** page. Then in the **+** menu select **Pipeline** to create a new pipeline.
@@ -176,7 +197,7 @@ In this task, you will automate transformation process by encapsulating the note
 
    ![](./images/newlbimg2.png)
 
-    **Note**: You can also create a trigger to run the pipeline at a scheduled time or in response to a specific event.
+    > **Note**: You can also create a trigger to run the pipeline at a scheduled time or in response to a specific event.
 
 3. When the pipeline has started running, on the **Monitor** page, view the **Pipeline runs** tab and review the status of the **Transform Sales Data** pipeline.
 
