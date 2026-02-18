@@ -20,34 +20,46 @@ You'll need an Azure Synapse Analytics workspace with access to data lake storag
 
 In this task, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
-    
-    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
+1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the **Azure portal**.
 
-    ![Azure portal with a cloud shell pane](./images/cl2.png)
-   
-2. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+    ![Azure portal with a cloud shell pane](images/DA-image1.png)
 
-   ![Azure portal with a cloud shell pane](./images/cl3.png)
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (Bash or PowerShell). If so, select PowerShell.
 
-3. Note that Cloud Shell can be resized by dragging the separator bar at the top of the pane, or by using the—, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+    ![Azure portal with a cloud shell pane](images/DA-image2.png)
 
-4. In the PowerShell pane, enter the following commands to clone this repository:
+    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
 
-    ```powershell
-    rm -r dp-203 -f
-    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
+1. On Getting started window choose **Mount storage account(1)** then under Storage account subscription select your available **subscription (2)** from the dropdown and click on **Apply (3)**.
+
+   ![Azure portal with a cloud shell pane](images/DA-image3.png)
+
+1. Within the Mount storage account pane, select **we will create a storage account for you (1)** and click **Next (2)**.
+
+    ![Azure portal with a cloud shell pane](images/DA-image4.png)
+
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+
+1. In the PowerShell pane, manually enter the following commands to clone this repo:
+
+    ```
+    rm -r dp-203-azure-data-engineer -f
+    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
+
     ```
 
-5. After the repository has been cloned, enter the following commands to change to the folder for this exercise, and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
-    ```powershell
-    cd dp-203/Allfiles/labs/10
+    ```
+    cd dp-203-azure-data-engineer/Allfiles/labs/10
     ./setup.ps1
     ```
 
-6. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
-7. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+1. If prompted, provided resource group already exists. Are you sure want to update it. Enter **Y** and press enter.
+
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+
+1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
 
     > **Note**: Be sure to remember this password!
 
@@ -61,39 +73,47 @@ In this task, you will be verifying the data stores by checking the files using 
 
 1. After the script has completed, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
 
+    ![](images/DA-image5-1.png)
+
 2. In the **Overview** page for your Synapse Workspace, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; signing in if prompted.
 
-   ![](images/labimg2.png)
+   ![](images/DA-image6.png)
 
-3. On the left side of Synapse Studio, use the ›› icon to expand the menu - this reveals the different pages within Synapse Studio that you’ll use to manage resources and perform data analytics tasks.
+3. On the left side of Synapse Studio, use the **››** icon to expand the menu - this reveals the different pages within Synapse Studio that you’ll use to manage resources and perform data analytics tasks.
 
-4. On the **Manage** page, on the **SQL pools** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to resume it when prompted.
+    ![](images/DA-image7.png)
 
-     Resuming the pool can take a few minutes. You can use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it's ready. While you're waiting, continue with the steps below to view the source data.
+4. On the **Manage (1)** page, on the **SQL pools (2)** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655; (3)** icon to start it; confirming that you want to resume it when prompted.
 
-5. On the **Data** page, view the **Linked** tab and verify that your workspace includes a link to your Azure Data Lake Storage Gen2 storage account, which should have a name similar to **synapse*xxxxxxx* (Primary - datalake*xxxxxxx*)**.
+    ![](images/DA-image8.png)
 
-   ![](images/labimg3.png)
+    - Resuming the pool can take a few minutes. You can use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it's ready. While you're waiting, continue with the steps below to view the source data.
 
-6. Expand your storage account and verify that it contains a file system container named **files (primary)**.
+5. On the **Data (1)** page, view the **Linked (2)** tab and verify that your workspace includes a link to your **Azure Data Lake Storage Gen2 (3)** storage account, which should have a name similar to **synapse*xxxxxxx* (Primary - datalake*xxxxxxx*) (4)**.
 
-7. Select the files container, and note that it contains a folder named **data**.
+   ![](images/DA-image9.png)
 
-   ![](images/labimg15.png)
+6. Expand your storage account and verify that it contains a file system container named **files (primary) (1)**. Select the files container, and note that it contains a folder named **data (2)**.
 
-8. Open the **data** folder and observe the **Product.csv** file it contains.
+   ![](images/DA-image10.png)
 
-9. Right-click **Product.csv** and select **Preview** to see the data it contains. Note that it contains a header row and some records of product data.
+7. Open the **data** folder and observe the **Product.csv** file it contains.
 
-   ![](images/labimg16.png)
+    ![](images/DA-image11.png)
 
-10. Return to the **Manage** page and ensure that your dedicated SQL pool is now online. If not, wait for it.
+8. Right-click **Product.csv (1)** and select **Preview (2)** to see the data it contains. Note that it contains a header row and some records of product data.
 
-11. In the **Data** page, on the **Workspace** tab, expand **SQL database**, your **sql*xxxxxxx* (SQL)** database, and its **Tables**.
+    ![](images/DA-image12.png)
 
-    ![](images/labimg17.png)
+   ![](images/DA-image13.png)
 
-12. Select the **dbo.DimProduct** table. Then in its **...** menu, select **New SQL script** > **Select TOP 100 rows**; which will run a query that returns the product data from the table - there should be a single row.
+9. Return to the **Manage** page and ensure that your dedicated SQL pool is now online. If not, wait for it.
+
+10. On the **Data (1)** page, select the **Workspace (2)** tab. Expand **SQL database (3)**, then expand your **sqlxxxxxxx (SQL) (4)** database and its **Tables (5)**. Finally, view the **dbo.DimProduct (6)** table.
+
+    ![](images/DA-image14-1.png)
+
+11. Select the **dbo.DimProduct** table. Then in its **...** menu, select **New SQL script** > **Select TOP 100 rows**; which will run a query that returns the product data from the table - there should be a single row.
 
     ![](images/labimg18.png)
 
@@ -103,40 +123,77 @@ In this task, you will implement an Azure Synapse Analytics pipeline that contai
 
 ### Task 3.1: Create a pipeline with a data flow activity
 
-1. In Synapse Studio, select the **Integrate** page. Then in the **+** menu select **Pipeline** to create a new pipeline.
-2. In the **Properties** pane for your new pipeline, change its name from **Pipeline1** to **Load Product Data**. Then use the **Properties** button above the **Properties** pane to hide it.
-3. In the **Activities** pane, expand **Move & transform**; and then drag a **Data flow** to the pipeline design surface as shown here:
+1. In Synapse Studio, select the **Integrate (1)** page. Then in the **+ (2)** menu select **Pipeline (3)** to create a new pipeline.
 
-    ![Screenshot of a pipeline with a data flow activity.](./images/dataflow(1).png)
+    ![](images/DA-image15.png)
 
-4. Under the pipeline design surface, in the **General** tab(at the bottom of the page), set the **Name** property to **LoadProducts**.
-5. On the **Settings** tab, at the bottom of the list of settings, expand **Staging** and set the following staging settings:
-    - **Staging linked service**: Select the **synapse*xxxxxxx*-WorkspaceDefaultStorage** linked service.
-    - **Staging storage folder**: Replace **container** to **files** and replace **Directory** to **stage_products**.
+2. In the **Properties** pane for your new pipeline, change its name from **Pipeline1** to **Load Product Data (1)**. 
+Then use the **Properties** button above the **Properties (2)** pane to hide it.
+
+    ![](images/DA-image16.png)
+
+3. In the **Activities** pane, expand **Move & transform (1)**; and then drag a **Data flow (2)** to the pipeline design surface as shown here:
+
+    ![Screenshot of a pipeline with a data flow activity.](./images/DA-image17.png)
+
+4. Under the pipeline design surface, in the **General (1)** tab (at the bottom of the page), set the **Name** property to **LoadProducts (2)**.
+
+    ![](images/DA-image18.png)
+
+5. On the **Settings** tab, at the bottom of the list of settings, expand **Staging (1)** and set the following staging settings:
+
+    - **Staging linked service**: Select the **synapse*xxxxxxx*-WorkspaceDefaultStorage (2)** linked service.
+
+    - **Staging storage folder**: Replace **container** to **files (3)** and replace **Directory** to **stage_products (4)**.
+
+        ![](images/DA-image19.png)
 
 ### Task 3.2: Configure the data flow
 
-1. At the top of the **Settings** tab for the **LoadProducts** data flow, for the **Data flow** property, select **+ New**.
-2. In the **Properties** pane for the new data flow design surface that opens, set the **Name** to **LoadProductsData** and then hide the **Properties** pane. The data flow designer should look like this:
+1. At the top of the **Settings (1)** tab for the **LoadProducts** data flow, for the **Data flow** property, select **+ New (2)**.
 
-    ![Screenshot of an empty data flow activity.](./images/empty-dataflow(1).png)
+    ![](images/DA-image20.png)
+
+2. In the **Properties** pane for the new data flow design surface that opens, set the **Name** to **LoadProductsData (1)** and then hide the **Properties (2)** pane. The data flow designer should look like this:
+
+    ![Screenshot of an empty data flow activity.](./images/DA-image21.png)
 
 ### Task 3.3: Add sources
 
-1. In the data flow design surface, in the **Add Source** drop-down list, select **Add Source**. Then configure the source settings as follows:
-    - **Output stream name**: ProductsText
-    - **Description**: Products text data
-    - **Source type**: Integration dataset
-    - **Dataset**: Select **+ New** to add new dataset with the following properties:
-        - **New integration dataset**: Select **Azure Data lake Storage Gen2** and click **Continue**.
-        - **Format**: Delimited text and click **Continue**.
-        - **Name**: Products_Csv
-        - **Linked service**: synapse*xxxxxxx*-WorkspaceDefaultStorage
-        - **File path**: files/data/Product.csv
-        - **First row as header**: Selected
-        - **Import schema**: From connection/store
-        - Click on **OK**.
-    - **Allow schema drift**: Selected
+1. In the data flow design surface, in the **Add Source (1)** drop-down list, select **Add Source (2)**. 
+
+    ![Screenshot of an empty data flow activity.](./images/DA-image22.png)
+
+    - Then configure the source settings as follows:
+
+        - **Output stream name**: ProductsText
+        - **Description**: Products text data
+        - **Source type**: Integration dataset
+        - **Dataset**: Select **+ New** to add new dataset with the following properties:
+
+            ![Screenshot of an empty data flow activity.](./images/DA-image23.png)
+
+            - **New integration dataset**: Select **Azure Data lake Storage Gen2 (1)** and click **Continue (2)**.
+
+                ![Screenshot of an empty data flow activity.](./images/DA-image24.png)
+
+            - **Format**: **DelimitedText (1)** and click **Continue (2)**.
+
+                ![Screenshot of an empty data flow activity.](./images/DA-image25.png)
+
+            - **Name (1)**: Products_Csv
+            - **Linked service (2)**: synapse*xxxxxxx*-WorkspaceDefaultStorage
+            - **File path (3)**: files/data/Product.csv
+            - **First row as header (4)**: Selected
+            - **Import schema (5)**: From connection/store
+            - Click on **OK (6)**.
+
+                ![Screenshot of an empty data flow activity.](./images/DA-image26.png)
+
+        - **Allow schema drift**: Selected
+
+            ![Screenshot of an empty data flow activity.](./images/DA-image27.png)
+
 2. On the **Projection** tab for the new **ProductsText** source, set the following data types:
     - **ProductID**: string
     - **ProductName**: string
@@ -144,7 +201,13 @@ In this task, you will implement an Azure Synapse Analytics pipeline that contai
     - **Size**: string
     - **ListPrice**: decimal
     - **Discontinued**: boolean
+
+        ![Screenshot of an empty data flow activity.](./images/DA-image28.png)
+
 3. Add a second source with the following properties:
+
+    ![Screenshot of an empty data flow activity.](./images/DA-image22.png)
+
     - **Output stream name**: ProductTable
     - **Description**: Product table
     - **Source type**: Integration dataset
@@ -152,16 +215,16 @@ In this task, you will implement an Azure Synapse Analytics pipeline that contai
         - **New integration dataset**: Select **Azure Synapse Analytics** and click **Continue**.
         - **Name**: DimProduct
         - **New Linked service**: Select **+ New** from the dropdown to create a **New** linked service with the following properties:
+
             - **Name**: Data_Warehouse
             - **Description**: Dedicated SQL pool
             - **Connect via integration runtime**: AutoResolveIntegrationRuntime
-            - **version**: Legacy
             - **Account selection method**: From Azure subscription
             - **Azure subscription**: Select your Azure subscription
             - **Server name**: synapse*xxxxxxx* (Synapse workspace)
             - **Database name**: sql*xxxxxxx*
             - **SQL pool**: sql*xxxxxxx*
-            - **Authentication type**: System Assigned Managed Identity
+            - **Authentication type**: System assigned managed identity
             - Click on **Create**.
         - **Table name**: dbo.DimProduct
         - **Import schema**: None
@@ -172,7 +235,7 @@ In this task, you will implement an Azure Synapse Analytics pipeline that contai
 
     ![Screenshot of an empty data flow activity.](./images/lab1-new1.png)
 
-5. On the **connection** page, select the **dbo.DimProduct(1)** table from the dropdown and click on **Schema(2)**
+5. On the **connection** page, select the **dbo.DimProduct (1)** table from the dropdown and click on **Schema (2)**
 
     ![Screenshot of an empty data flow activity.](./images/lab1-new2.png)
 
@@ -181,6 +244,7 @@ In this task, you will implement an Azure Synapse Analytics pipeline that contai
     ![Screenshot of an empty data flow activity.](./images/lab1-new3.png)
 
 7. On the **Projection** tab for the new **ProductTable** source, verify that the following data types are set:
+
     - **ProductKey**: integer
     - **ProductAltKey**: string
     - **ProductName**: string
@@ -191,11 +255,14 @@ In this task, you will implement an Azure Synapse Analytics pipeline that contai
 
 8. Verify that your data flow contains two sources, as shown here:
 
-    ![Screenshot of a data flow with two sources.](./images/dataflow_sources(1).png)
+    ![Screenshot of a data flow with two sources.](./images/DA-image29.png)
 
 ### Task 3.4: Add a Lookup
 
-1. Select the **+** icon at the bottom right of the **ProductsText** source and select **Lookup**.
+1. Select the **+ (1)** icon at the bottom right of the **ProductsText** source and select **Lookup (2)**.
+
+    ![Screenshot of a data flow with two sources and a lookup.](./images/DA-image31.png)
+
 2. Configure the Lookup settings as follows:
     - **Output stream name**: MatchedProducts
     - **Description**: Matched product data
@@ -207,23 +274,26 @@ In this task, you will implement an Azure Synapse Analytics pipeline that contai
     - **Lookup conditions**: ProductID == ProductAltKey
 3. Verify that your data flow looks like this:
 
-    ![Screenshot of a data flow with two sources and a lookup.](./images/dataflow_lookup(1).png)
+    ![Screenshot of a data flow with two sources and a lookup.](./images/DA-image32.png)
 
     >**Note**: The lookup returns a set of columns from *both* sources, essentially forming an outer join that matches the **ProductID** column in the text file to the **ProductAltKey** column in the data warehouse table. When a product with the alternate key already exists in the table, the dataset will include the values from both sources. When the product dos not already exist in the data warehouse, the dataset will contain NULL values for the table columns.
 
 ### Task 3.5: Add an Alter Row
 
 1. Select the **+** icon at the bottom right of the **MatchedProducts** Lookup and select **Alter Row**.
+
 2. Configure the alter row settings as follows:
+
     - **Output stream name**: SetLoadAction
     - **Description**: Insert new, upsert existing
     - **Incoming stream**: MatchedProducts
     - **Alter row conditions**: Edit the existing condition and use the **+** button to add a second condition as follows (note that the expressions are *case-sensitive*):
-        - InsertIf: `isNull(ProductKey)`
-        - UpsertIf: `not(isNull(ProductKey))`
+        - Insert If: `isNull(ProductKey)`
+        - Upsert If: `not(isNull(ProductKey))`
+
 3. Verify that the data flow looks like this:
 
-    ![Screenshot of a data flow with two sources, a lookup, and an alter row.](./images/dataflow_alterrow(1).png)
+    ![Screenshot of a data flow with two sources, a lookup, and an alter row.](./images/DA-image33.png)
 
     >**Note**: The alter row step configures the kind of load action to perform for each row. Where there's no existing row in the table (the **ProductKey** is NULL), the row from the text file will be inserted. Where there's already a row for the product, an *upsert* will be performed to update the existing row. This configuration essentially applies a *type 1 slowly changing dimension update*.
 
