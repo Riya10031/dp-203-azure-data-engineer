@@ -37,14 +37,14 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 4. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
-    rm -r dp-203 -f
-    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
+    rm -r dp-203-azure-data-engineer -f
+    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
 5. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
-    cd dp-203/Allfiles/labs/14
+    cd dp-203-azure-data-engineer/Allfiles/labs/14
     ./setup.ps1
     ```
 
