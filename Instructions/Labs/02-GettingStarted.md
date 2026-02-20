@@ -1,20 +1,20 @@
-# Build a Data Pipeline in Synapse Analytics
+# Using Apache Spark Notebook in pipeline
 
-### Overall Estimated Duration: 60 Minutes
+### Overall Estimated Duration: 120 Minutes
 
 ## Overview
 
-In this hands-on lab, you will provision an Azure Synapse Analytics workspace, interactively run a Spark notebook, and automate the transformation of data by executing the notebook within a pipeline. The lab starts by guiding you through the steps to create an Azure Synapse workspace, including configuring a Spark pool and linking your storage account. You will then run a Spark notebook to transform sales data interactively, using Apache Spark to load, process, and save the data in a new format. Lastly, you'll automate the entire process by creating a pipeline that runs the notebook, enabling you to efficiently handle large datasets in a scalable manner. This lab enhances your understanding of Spark in Azure Synapse Analytics and its integration with data pipelines.
+In this hands-on lab on **Using Apache Spark Notebook in a Pipeline**, you will provision and configure an Apache Spark notebook environment and integrate it into a data pipeline to process, transform, and analyze large-scale datasets efficiently. You will learn how to create a Spark session, connect to data sources, perform distributed data transformations, and validate outputs within a structured pipeline workflow. By the end of the lab, you will understand how Apache Spark notebooks can be used to build scalable data processing stages, automate tasks, and support end-to-end data engineering processes in modern analytics environments.
 
 ## Objective
 
-This lab is aimed to give learners hands-on experience with Azure Synapse Analytics, focusing on running Spark notebooks interactively and automating data transformation processes within pipelines. By the end of this lab, you will be able to:
+This lab is designed to provide learners with hands-on experience in using an Apache Spark notebook within a data pipeline to perform scalable data processing and automation. By the end of this lab, you will be able to:
 
-- **Provision an Azure Synapse Analytics workspace:** This exercise will guide you through setting up an Azure Synapse Analytics workspace with access to data lake storage and a Spark pool, enabling you to work with large-scale data processing.
+* **Provision a Spark notebook environment:** This exercise will guide you through setting up an Apache Spark notebook environment, configuring the necessary compute resources, and connecting to relevant data sources to enable distributed data processing.
 
-- **Run a Spark notebook interactively:** You will learn how to use Synapse Studio to run a Spark notebook, interactively transforming data and saving the results in a different format.
+* **Run a Spark notebook interactively:** You will learn how to create and execute Spark code within a notebook, perform data transformations, analyze results, and validate outputs interactively.
 
-- **Automate data transformation with a pipeline:** You will create a pipeline to run the Spark notebook automatically, streamlining data processing and enabling you to handle large datasets efficiently.
+* **Integrate and automate notebook execution in a pipeline:** You will build and configure a data pipeline that triggers the Spark notebook automatically, enabling streamlined, repeatable, and scalable data transformation workflows.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ Participants should have:
 
 ## Architecture
 
-The architecture for this lab involves provisioning an Azure Synapse Analytics workspace, which includes setting up a Spark pool and linking it to an Azure Data Lake Storage account. Data from the storage account is processed using an Apache Spark notebook, which is run interactively to transform raw sales data into a more structured format (e.g., Parquet). The transformed data is saved back to the Data Lake storage. To automate this process, the notebook is encapsulated within an Azure Synapse pipeline, allowing for the execution of the notebook as part of an orchestrated data flow. The pipeline can be triggered either manually or on a schedule, making the entire data transformation process scalable and repeatable. The integration of these components in a seamless workflow enables efficient data processing at scale.
+The architecture for this lab consists of a data source layer (such as cloud storage or a data lake) that stores raw input data, a processing layer powered by an Apache Spark notebook where distributed data transformations and analytics are performed, and an orchestration layer that integrates the notebook into a pipeline to automate execution. The pipeline triggers the Spark notebook, which reads data from the storage layer, processes and transforms it using Spark’s distributed computing capabilities, and writes the transformed output back to a designated storage location for downstream consumption, reporting, or further analytics. This layered architecture ensures scalability, automation, and efficient end-to-end data processing within a modern data engineering workflow.
 
 ## Architecture Diagram
 
@@ -50,7 +50,7 @@ The architecture for this lab involves the following key components:
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Labs/images/new-gt-v2.png)
+![Access Your VM and Lab Guide](../Labs/images/DA-image-37.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -60,33 +60,19 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](../Labs/images/new-gt-v3.png)
+![Explore Lab Resources](../Labs/images/DA-image34.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-![Use the Split Window Feature](../Labs/images/spl.png)
+![Use the Split Window Feature](../Labs/images/DA-image35.png)
  
 ## Managing Your Virtual Machine
  
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
  
-![Manage Your Virtual Machine](../Labs/images/res.png)
-
-## **Lab Duration Extension**
-
-1. To extend the duration of the lab, kindly click the **Hourglass** icon in the top right corner of the lab environment. 
-
-    ![Manage Your Virtual Machine](../Labs/images/gext.png)
-
-    >**Note:** You will get the **Hourglass** icon when 10 minutes are remaining in the lab.
-
-2. Click **OK** to extend your lab duration.
- 
-   ![Manage Your Virtual Machine](../Labs/images/gext2.png)
-
-3. If you have not extended the duration prior to when the lab is about to end, a pop-up will appear, giving you the option to extend. Click **OK** to proceed.
+![Manage Your Virtual Machine](../Labs/images/cor-op-rt-g-6.png)
  
 ## Let's Get Started with Azure Portal
  
