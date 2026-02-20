@@ -14,7 +14,7 @@ In this lab, you will be able to complete the following tasks:
 
 ## Task 1: Provision an Azure Synapse Analytics workspace
 
-You'll need an Azure Synapse Analytics workspace with access to data lake storage and a Spark pool.
+You'll need an Azure Synapse Analytics workspace with access to data lake storage and a dedicated SQL pool hosting a relational data warehouse.
 
 In this task, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
@@ -61,7 +61,7 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
     > **Note**: Be sure to remember this password!
 
-1. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you're waiting, review the [Azure Synapse Pipelines](https://learn.microsoft.com/en-us/azure/data-factory/concepts-data-flow-performance-pipelines) article in the Azure Synapse Analytics documentation.
+8. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you're waiting, review the [Data flows in Azure Synapse Analytics](https://learn.microsoft.com/azure/synapse-analytics/concepts-data-flow-overview) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Run a Spark notebook interactively
 
