@@ -54,14 +54,14 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 1. In the PowerShell pane, paste the following **commands** and click **Enter** to clone this repo:
 
     ```
-    rm -r dp-203 -f
-    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
+    rm -r dp-203-azure-data-engineer -f
+    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
 1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
-    cd dp-203/Allfiles/labs/23
+    cd dp-203-azure-data-engineer/Allfiles/labs/23
     ./setup.ps1
     ```
 
@@ -141,7 +141,7 @@ In this task, you will use the notebook feature in Azure Databricks in which it 
 
    ![](./images/24-06-25-l1-12.png)
 
-1. Download the [**products.csv**](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/23/adventureworks/products.csv) file inside the LabVM, saving it as **products.csv**. Then, in the **Explore products** notebook, on the **File (1)** menu, select **Upload data to DBFS (2)**.
+1. Download the [**products.csv**](https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Allfiles/labs/23/adventureworks/products.csv) file inside the LabVM, saving it as **products.csv**. Then, in the **Explore products** notebook, on the **File (1)** menu, select **Upload data to DBFS (2)**.
 
     ![Create storage by clicking confirm.](./images/210511.png)
 

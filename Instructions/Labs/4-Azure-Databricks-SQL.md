@@ -53,14 +53,14 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 1. In the PowerShell pane, paste the following commands and click Enter to clone this repo:
 
     ```
-    rm -r dp-203 -f
-    git clone -b prod https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer dp-203
+    rm -r dp-203-azure-data-engineer -f
+    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
 1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
-    cd dp-203/Allfiles/labs/26
+    cd dp-203-azure-data-engineer/Allfiles/labs/26
     ./setup.ps1
     ```
 
@@ -153,7 +153,7 @@ You can use the **default** database for your tables, but when building an analy
 
 In this task, you will create a table schema using an external file.
 
-1. Download the [**products.csv**](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press **Ctrl+S**, saving it as **products.csv**, .
+1. Download the [**products.csv**](https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/blob/guidedlabs/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press **Ctrl+S**, saving it as **products.csv**, .
 
 1. In the Azure Databricks workspace portal, in the sidebar, select **+ New (1)** and then select **Add or upload data (2)**
 
