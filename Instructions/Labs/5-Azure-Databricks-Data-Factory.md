@@ -19,12 +19,12 @@ In this lab, you will perform:
 
 In this task, you'll use a script to provision a new Azure Databricks workspace and an Azure Data Factory resource in your Azure subscription.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+1. In a web browser, sign in to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop-down options.
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
@@ -124,7 +124,7 @@ In this task, you will generate an access token in the Azure Databricks Portal.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-5.png)
    
-1. In the **Settings** page, select **Developer (1)**. Then next to **Access tokens** select **Manage (2)**.
+1. In the **Settings** page, select **Developer (1)**. Then, next to **Access tokens** select **Manage (2)**.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-6.png)
    
@@ -191,7 +191,7 @@ In this task, you will generate an access token in the Azure Databricks Portal.
 
 Now that you have created a linked service, you can use it in a pipeline to run the notebook you viewed previously.
 
-In this task, you will create a pipeline and use it run the Azure Databricks Notebook.
+In this task, you will create a pipeline and use it to run the Azure Databricks Notebook.
 
 ### Task 4.1: Create a pipeline
 
@@ -224,7 +224,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-20.png)   
        
-1. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it and click **publish (3)** finally.
+1. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it and click **Publish (3)** finally.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-21.png)
 
