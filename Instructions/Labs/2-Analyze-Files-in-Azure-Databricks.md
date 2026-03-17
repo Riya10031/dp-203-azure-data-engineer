@@ -68,7 +68,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
     ![Azure portal with a cloud shell pane](./images/24-06-25-l1-6.png)
 
-1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of the **cloud shell**
+1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X**, which is located at the top right corner of the **cloud shell**
 
    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-7.png)
 
@@ -136,7 +136,7 @@ In this task, you will be importing a notebook to the Azure Databricks Portal.
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-2.png)
 
-1. Connect the notebook to your cluster, and follow the instructions it contains; running the cells it contains to explore data in files.
+1. Connect the notebook to your cluster, and follow the instructions it contains; run the cells it contains to explore data in files.
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-3.png)
    
