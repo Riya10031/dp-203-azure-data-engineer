@@ -18,13 +18,13 @@ In this lab, you will perform:
 
 In this task, you'll use a script to provision a new Azure Databricks workspace.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+1. In a web browser, sign in to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop-down options.
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
@@ -51,14 +51,14 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 1. In the PowerShell pane, paste the following commands and click Enter to clone this repo:
 
     ```
-    rm -r dp-203 -f
-    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
+    rm -r dp-203-azure-data-engineer -f
+    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
 1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
-    cd dp-203/Allfiles/labs/25
+    cd dp-203-azure-data-engineer/Allfiles/labs/25
     ./setup.ps1
     ```
 
@@ -68,7 +68,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
     ![Azure portal with a cloud shell pane](./images/24-06-25-l1-6.png)
 
-1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of the **cloud shell**
+1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X**, which is located at the top right corner of the **cloud shell**
 
    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-7.png)
 
@@ -118,7 +118,6 @@ In this task, you'll create a *single-node* cluster to minimize the compute reso
 
 > **Note**: If your cluster fails to start, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned. See [CPU core limit prevents cluster creation](https://docs.microsoft.com/azure/databricks/kb/clusters/azure-core-limit) for details. If this happens, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
-
 ## Task 3: Explore Delta Lake using a notebook
 
 In this task, you'll use code in a notebook to explore Delta Lake in Azure Databricks.
@@ -129,7 +128,7 @@ In this task, you'll use code in a notebook to explore Delta Lake in Azure Datab
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-1.png)
    
-1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from  `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/25/Delta-Lake.ipynb` **(2)** and then click on **Import (3)**.
+1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from  `https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs/Allfiles/labs/25/Delta-Lake.ipynb` **(2)** and then click on **Import (3)**.
 
    ![Create storage by clicking confirm.](./images/24-06-25-l3-1.png)
    

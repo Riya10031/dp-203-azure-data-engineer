@@ -21,12 +21,12 @@ In this lab, you will perform:
 
 In this task, you'll use a script to provision a new Azure Databricks workspace.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+1. In a web browser, sign in to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop-down options.
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
@@ -53,14 +53,14 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 1. In the PowerShell pane, paste the following commands and click Enter to clone this repo:
 
     ```
-    rm -r dp-203 -f
-    git clone -b prod https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer dp-203
+    rm -r dp-203-azure-data-engineer -f
+    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
 1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
-    cd dp-203/Allfiles/labs/26
+    cd dp-203-azure-data-engineer/Allfiles/labs/26
     ./setup.ps1
     ```
 
@@ -70,13 +70,13 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-6.png)
 
-1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X** which is located at the top right corner of the **cloud shell**
+1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X**, which is located at the top right corner of the **cloud shell**
 
    ![](./images/24-06-25-l1-7.png)
 
 ## Task 2: View and start a SQL Warehouse
 
-In this task, you will launch the workspace and you'll view and start SQL Warehouse.
+In this task, you will launch the workspace, and you'll view and start SQL Warehouse.
 
 1. When the Azure Databricks workspace resource has been deployed, go to it in the Azure portal.
 
@@ -108,7 +108,7 @@ In this task, you will launch the workspace and you'll view and start SQL Wareho
 
    ![](./images/24-06-25-l4-3.png)
 
-1. A Page appears where you can configure the Cluster size, set the **Cluster size** property to **2X-Small (1)** and **Save (2)** your changes.
+1. A Page appears where you can configure the Cluster size, set the **Cluster size** property to **2X-Small (1)**, and **Save (2)** your changes.
 
    ![](./images/24-06-25-l4-4.png)
     
@@ -116,11 +116,11 @@ In this task, you will launch the workspace and you'll view and start SQL Wareho
 
    ![](./images/24-06-25-l4-5.png)
 
-1. Now your SQL Warehouse will be up and running state.
+1. Now your SQL Warehouse will be up and running.
 
    ![](./images/ad-lab4-6.png)
 
-> **Note**: If your SQL Warehouse fails to start, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned. See [Required Azure vCPU quota](https://docs.microsoft.com/azure/databricks/sql/admin/sql-endpoints#required-azure-vcpu-quota) for details. If this happens, you can try requesting for a quota increase as detailed in the error message when the warehouse fails to start. Alternatively, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
+> **Note**: If your SQL Warehouse fails to start, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned. See [Required Azure vCPU quota](https://docs.microsoft.com/azure/databricks/sql/admin/sql-endpoints#required-azure-vcpu-quota) for details. If this happens, you can try requesting a quota increase as detailed in the error message when the warehouse fails to start. Alternatively, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
 ## Task 3: Create a database schema
 
@@ -137,7 +137,7 @@ In this task, you will be creating a database schema in your Azure Databricks Po
 1. In the **New query** pane, enter the following SQL code:
 
     ```sql
-    CREATE SCHEMA adventureworks;
+    CREATE SCHEMA hive_metastore.adventureworks;
     ```    
 1. Use the **&#9658; Run (1000)** button to run the SQL code.
 
@@ -153,7 +153,7 @@ You can use the **default** database for your tables, but when building an analy
 
 In this task, you will create a table schema using an external file.
 
-1. Download the [**products.csv**](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/blob/master/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press **Ctrl+S**, saving it as **products.csv**, .
+1. Download the [**products.csv**](https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/blob/guidedlabs/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press **Ctrl+S**, saving it as **products.csv**, .
 
 1. In the Azure Databricks workspace portal, in the sidebar, select **+ New (1)** and then select **Add or upload data (2)**
 
@@ -191,10 +191,10 @@ In this task, you will create a query in the adventureworks database, which was 
 
 1. In the **New query** pane, enter the following SQL code:
 
-    ```sql
-    SELECT ProductID, ProductName, Category
-    FROM adventureworks.products; 
-    ```
+   ```sql
+   SELECT ProductID, ProductName, Category
+   FROM hive_metastore.adventureworks.products; 
+   ```
 
 1. Use the **&#9658;Run (1000)** button to run the SQL code.
 
@@ -245,7 +245,7 @@ In this task, you will be creating a dashboard to visualize the data of the Prod
 
     ![](./images/24-06-25-l4-14.png)
 
-1. Now the Dashboard has been published successfully. Click on **here** to view the Dashboard. Alternatively, you can also view the dashboard by navigating to the **Dashboard** at the left pane.
+1. Now the Dashboard has been published successfully. Click on **here** to view the Dashboard. Alternatively, you can also view the dashboard by navigating to the **Dashboard** in the left pane.
 
    ![](./images/ad-lab4-23.png)
 

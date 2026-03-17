@@ -19,12 +19,12 @@ In this lab, you will perform:
 
 In this task, you'll use a script to provision a new Azure Databricks workspace and an Azure Data Factory resource in your Azure subscription.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+1. In a web browser, sign in to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
 
     ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop-down options.
 
     ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
 
@@ -52,14 +52,14 @@ In this task, you'll use a script to provision a new Azure Databricks workspace 
 1. In the PowerShell pane, paste the following commands and click Enter to clone this repo:
 
     ```
-    rm -r dp-203 -f
-    git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
+    rm -r dp-203-azure-data-engineer -f
+    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
 1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
     ```
-    cd dp-203/Allfiles/labs/27
+    cd dp-203-azure-data-engineer/Allfiles/labs/27
     ./setup.ps1
     ```
 
@@ -101,7 +101,7 @@ In this task, you'll import an existing notebook that contains some Python code.
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-1.png)
   
-1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/27/Process-Data.ipynb` **(2)** and then click on **Import (3)**.
+1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs/Allfiles/labs/27/Process-Data.ipynb` **(2)** and then click on **Import (3)**.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-4.png)
 
@@ -124,7 +124,7 @@ In this task, you will generate an access token in the Azure Databricks Portal.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-5.png)
    
-1. In the **Settings** page, select **Developer (1)**. Then next to **Access tokens** select **Manage (2)**.
+1. In the **Settings** page, select **Developer (1)**. Then, next to **Access tokens** select **Manage (2)**.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-6.png)
    
@@ -191,7 +191,7 @@ In this task, you will generate an access token in the Azure Databricks Portal.
 
 Now that you have created a linked service, you can use it in a pipeline to run the notebook you viewed previously.
 
-In this task, you will create a pipeline and use it run the Azure Databricks Notebook.
+In this task, you will create a pipeline and use it to run the Azure Databricks Notebook.
 
 ### Task 4.1: Create a pipeline
 
@@ -224,7 +224,7 @@ In this task, you will create a pipeline and use it run the Azure Databricks Not
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-20.png)   
        
-1. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it and click **publish (3)** finally.
+1. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it and click **Publish (3)** finally.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-21.png)
 
