@@ -4,9 +4,9 @@
 
 Azure Databricks is a Microsoft Azure-based version of the popular open-source Databricks platform.
 
-Similarly to Azure Synapse Analytics, an Azure Databricks **workspace** provides a central point for managing Databricks clusters, data, and resources on Azure.
+Similar to Azure Synapse Analytics, an Azure Databricks **workspace** provides a central point for managing Databricks clusters, data, and resources on Azure.
 
-In this lab, you'll learn about Azure Databricks workspace, which provides a central point for managing Databricks clusters, data, and resources on Azure.
+In this lab, you'll learn about the Azure Databricks workspace, which provides a central point for managing Databricks clusters, data, and resources on Azure.
 
 ### Objectives
 
@@ -137,7 +137,7 @@ In this task, you will create a cluster in the Azure Databricks Portal.
 
 As in many Spark environments, Databricks supports the use of notebooks to combine notes and interactive code cells that you can use to explore data.
 
-In this task, you will use the notebook feature in Azure Databricks in which it uses Spark for querying and exploring data.
+In this task, you will use the notebook feature in Azure Databricks, which uses Spark for querying and exploring data.
 
 1. In the sidebar, use the **(+) New (1)** link to create a **Notebook (2)**.
 
@@ -173,7 +173,7 @@ In this task, you will use the notebook feature in Azure Databricks in which it 
 
    ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g24.png)
    
-1. In the **Explore products** notebook, in the empty code cell, paste the code you copied; which should look similar to this:
+1. In the **Explore products** notebook, in the empty code cell, paste the code you copied, which should look similar to this:
 
     ```python
     df1 = spark.read.format("csv").option("header", "true").load("dbfs:/FileStore/shared_uploads/<inject key="AzureAdUserEmail" enableCopy="false"/>/products.csv")
@@ -229,9 +229,9 @@ In this task, you will use the notebook feature in Azure Databricks in which it 
 
 ## Task 4: Create and query a table
 
-While many data analysis are comfortable using languages like Python or Scala to work with data in files, a lot of data analytics solutions are built on relational databases, in which data is stored in tables and manipulated using SQL.
+While many data analysts are comfortable using languages like Python or Scala to work with data in files, a lot of data analytics solutions are built on relational databases, in which data is stored in tables and manipulated using SQL.
 
-In this task, you will use the notebook which is created previously and query data using various code cells.
+In this task, you will use the notebook that was created previously and query data using various code cells.
 
 1. In the **Explore products** notebook, under the chart output from the previously run code cell, use the **+** icon to add a new cell.
 
