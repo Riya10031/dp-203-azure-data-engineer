@@ -52,7 +52,7 @@ The architecture for this lab involves the following key components:
  
 Once you're ready to dive in, your virtual machine and guide will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Labs/images/24-06-25-g1.png)
+![Access Your VM and Lab Guide](../Labs/images/data-brick-gt-lab1-gs-g1.png)
 
 ### Virtual Machine & Guide
  
@@ -85,51 +85,27 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
 
 ![](images/24-06-25-g5.png)
 
-
-## **Lab Duration Extension**
-
-1. To extend the duration of the lab, kindly click the **Hourglass** icon in the top right corner of the lab environment. 
-
-    ![Manage Your Virtual Machine](../Labs/images/24-06-25-g1-hr.png)
-
-    >**Note:** You will get the **Hourglass** icon when 10 minutes are remaining in the lab.
-
-1. Click **OK** to extend your lab duration.
- 
-   ![Manage Your Virtual Machine](../Labs/images/gext2.png)
-
-1. If you have not extended the duration prior to when the lab is about to end, a pop-up will appear, giving you the option to extend. Click **OK** to proceed.
- 
 ## Let's Get Started with Azure Portal
  
 1. In the **JumpVM**, click on the **Azure portal shortcut** of the Microsoft Edge browser, which is created on the desktop.
  
-   ![Launch Azure Portal](../Labs/images/sc900-image(1).png)
-
+   ![Launch Azure Portal](../Labs/images/data-brick-gt-lab1-gs-g5.png)
  
 1. On the **Sign in to Microsoft Azure** tab, you will see the login screen, in that enter the following email/username, and click on **Next**.
  
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+   - **Email:** <inject key="AzureAdUserEmail"></inject>
  
-       ![Enter Your Username](../Labs/images/sc900-image-1.png)
+       ![Enter Your Username](../Labs/images/data-brick-gt-lab1-gs-g2.png)
  
 1. Now enter the following password and click on **Sign in**.
  
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
  
-      ![Enter Your Password](../Labs/images/sc900-image-2.png)
+      ![Enter Your Password](../Labs/images/data-brick-gt-lab1-gs-g3.png)
  
 1. If prompted to stay signed in, you can click **No**.
 
-   ![](../Labs/images/Sign-in-no.png)
-
-1. If **Action Required** pop-up window appears, click on **Ask later**.
-
-     ![](../Labs/images/24-06-25-g6.png)
- 
-1. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Cancel" to skip the tour.
-
-    ![](../Labs/images/Azure-cancel-tour.png)
+   ![](../Labs/images/data-brick-gt-lab1-gs-g4.png)
 
 ## Support Contact
  
@@ -139,8 +115,8 @@ Learner Support Contacts:
 - Email Support: cloudlabs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
-Click "Next" from the bottom right corner to embark on your Lab journey!
+Click **Next** from the bottom right corner to embark on your Lab journey!
  
-   ![Start Your Azure Journey](../Labs/images/sc900-image(3).png)
+   ![Start Your Azure Journey](../Labs/images/data-brick-gt-lab1-gs-g6.png)
  
 ### Happy Learning!!
