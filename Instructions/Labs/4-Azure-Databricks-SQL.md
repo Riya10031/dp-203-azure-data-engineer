@@ -137,7 +137,7 @@ In this task, you will be creating a database schema in your Azure Databricks Po
 1. In the **New query** pane, enter the following SQL code:
 
     ```sql
-    CREATE SCHEMA adventureworks;
+    CREATE SCHEMA hive_metastore.adventureworks;
     ```    
 1. Use the **&#9658; Run (1000)** button to run the SQL code.
 
@@ -191,10 +191,10 @@ In this task, you will create a query in the adventureworks database, which was 
 
 1. In the **New query** pane, enter the following SQL code:
 
-    ```sql
-    SELECT ProductID, ProductName, Category
-    FROM adventureworks.products; 
-    ```
+   ```sql
+   SELECT ProductID, ProductName, Category
+   FROM hive_metastore.adventureworks.products; 
+   ```
 
 1. Use the **&#9658;Run (1000)** button to run the SQL code.
 

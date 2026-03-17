@@ -21,19 +21,19 @@ In this lab, you will perform:
 
 In this task, you'll use a script to provision a new Azure Databricks workspace.
 
-1. In a web browser, sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
+1. In a web browser, navigate to the **Azure portal**, open the following URL in the address bar, and sign in with the Lab credentials if you are not already signed in.
+
+    ```
+    https://portal.azure.com
+    ```
    
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. Use the **[\>_]** **icon** to the right of the search bar to create a new **Cloud Shell** in the Azure portal.
 
-    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
+    ![Azure portal with a cloud shell pane](./images/data-brick-gt-lab1-ex1-g1.png)
 
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop down options.
+1. Selecting a **PowerShell** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
-
-1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
-
-   ![Azure portal with a cloud shell pane](./images/24-06-25-l1-1.png)
+   ![Azure portal with a cloud shell pane](./images/data-brick-gt-lab1-ex1-g2.png)
 
 1. Within the Getting started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
 
@@ -141,7 +141,11 @@ In this task, you will use the notebook feature in Azure Databricks in which it 
 
    ![](./images/24-06-25-l1-12.png)
 
-1. Download the [**products.csv**](https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Allfiles/labs/23/adventureworks/products.csv) file inside the LabVM, saving it as **products.csv**. Then, in the **Explore products** notebook, on the **File (1)** menu, select **Upload data to DBFS (2)**.
+1. In the **LabVM**, download the following file and save it as **products.csv**, then in the **Explore products** notebook select **File (1)** and choose **Upload data to DBFS (2)**.
+
+    ```
+    https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Allfiles/labs/23/adventureworks/products.csv
+    ```
 
     ![Create storage by clicking confirm.](./images/210511.png)
 
