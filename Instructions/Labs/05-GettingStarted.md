@@ -54,7 +54,7 @@ The architecture for this lab involves the following key components:
  
 Once you're ready to dive in, your virtual machine and guide will be right at your fingertips within your web browser.
  
-![Access Your VM and Lab Guide](../Labs/images/24-06-25-g5-vm.png)
+![Access Your VM and Lab Guide](../Labs/images/data-brick-gt5-lab5-ex1-g1.png)
 
 ### Virtual Machine & Guide
  

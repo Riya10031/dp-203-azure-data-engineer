@@ -87,7 +87,7 @@ Azure Databricks is a distributed processing platform that uses Apache Spark *cl
 
 In this task, you will be using the Azure Databricks Portal to create a cluster.
 
-> **Tip**: If you already have a cluster with a 13.3 LTS runtime version in your Azure Databricks workspace, you can use it to complete this exercise and skip this procedure.
+> **Note**: If you already have a cluster with a 13.3 LTS runtime version in your Azure Databricks workspace, you can use it to complete this exercise and skip this procedure.
 
 1. In the **Search resources, services, and docs (G+/) (1)** box, enter **dp203-<inject key="DeploymentID" enableCopy="false"/>**, and then select the **Resource group (2)**.
 

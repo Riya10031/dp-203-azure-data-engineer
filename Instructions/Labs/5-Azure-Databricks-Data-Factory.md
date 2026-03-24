@@ -19,42 +19,51 @@ In this lab, you will perform:
 
 In this task, you'll use a script to provision a new Azure Databricks workspace and an Azure Data Factory resource in your Azure subscription.
 
-1. In a web browser, sign in to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. In a web browser, navigate to the **Azure portal**, open the following URL in the address bar, and sign in with the Lab credentials if you are not already signed in.
 
-    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
-
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop-down options.
-
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
-
-1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
-
-    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-1.png)
-
-1. Within the Getting Started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
-
-   ![](./images/24-06-25-l1-3.png)
-
-1. Within the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
-
-   ![](./images/24-06-25-l1-2.png)
-
-
-1. If you are prompted to create storage for your Cloud Shell, ensure your **Subscription** is selected, Please make sure you have selected your **Resource Group** which is **Azure-Databricks (1)**, select **Region** from the drop-down **(US) East US (2)** and enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)** for the **Storage account name** and enter **fileshare1 (4)** for the **File share name**, then click on **Create (5)**.
+   ```
+   https://portal.azure.com
+   ```
    
-    ![Create storage by clicking confirm.](./images/24-06-25-l1-4.png "Create storage advanced settings")
+1. Use the **[\>_]** **icon** to the right of the search bar to create a new **Cloud Shell** in the Azure portal.
 
-1. You can see a pop-up appearing **Deployment is in Progress**, wait for the PowerShell terminal to start.
+   ![Azure portal with a cloud shell pane](./images/data-brick-gt-lab1-ex1-g1.png)
 
-    ![](./images/24-06-25-l1-5.png)
+1. In the **Welcome to Azure Cloud Shell** pane, select **PowerShell**.
 
-1. In the PowerShell pane, paste the following commands and click Enter to clone this repo:
+   ![Azure portal with a cloud shell pane](./images/data-brick-gt-lab1-ex1-g2.png)
 
-    ```
-    rm -r dp-203-azure-data-engineer -f
-    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
-    ```
+1. Within the Getting started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
+
+   ![](./images/data-brick-gt-lab1-ex1-g3.png)
+
+1. In the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
+
+   ![](./images/data-brick-gt-lab1-ex1-g4.png)
+
+1. In the **Create storage account** pane, provide the following details:
+
+   - **Subscription (1)**: Select the defualt **Subscription**  
+   - **Resource group (2)**: Select **Azure-Databricks**  
+   - **Region (3)**: Select **(US) East US**  
+   - **Storage account name (4)**: Enter **storage<inject key="DeploymentID" enableCopy="false"/>**  
+   - **File share (5)**: Enter **fileshare1**  
+   - select **Create (6)**.
+
+      ![](./images/data-brick-gt-lab1-ex1-g5.png)
+
+1. In the **Deployment is in progress** notification, wait for the PowerShell terminal to start.
+
+   ![](./images/data-brick-gt-lab1-ex1-g6.png)
+
+1. In the PowerShell pane, paste the following **commands** and click **Enter** to clone this repo:
+
+   ```
+   rm -r dp-203-azure-data-engineer -f
+   git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
+   ```
+
+   ![](./images/data-brick-gt-lab1-ex1-g7.png)
 
 1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
@@ -63,15 +72,15 @@ In this task, you'll use a script to provision a new Azure Databricks workspace 
     ./setup.ps1
     ```
 
-1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. Wait for the script to complete (this may take a few minutes), and while waiting, review the following documentation.
 
-1. Wait for the script to complete - this typically takes around **5 minutes, but in some cases may take longer**. While you are waiting, review [What is Azure Data Factory?](https://docs.microsoft.com/azure/data-factory/introduction).
+   ```
+   https://docs.microsoft.com/azure/data-factory/introduction
+   ```
 
-   ![Azure portal with a cloud shell pane](./images/24-06-25-l5-2.png)
-   
-1. When the script has completed, close the cloud shell pane and browse to the **dp203-*xxxxxxx*** resource group that was created by the script to verify that it contains an Azure Databricks workspace and an Azure Data Factory (V2) resource (you may need to refresh the resource group view).
+1. In the **Cloud Shell** window, select the **X** at the top right corner to close it after the script execution completes.
 
-   ![Azure portal with a cloud shell pane](./images/24-06-25-l5-1.png)
+   ![Azure portal with a cloud shell pane](./images/data-brick-gt-lab1-ex1-g10.png)
 
 ## Task 2: Import a notebook
 
@@ -79,29 +88,35 @@ You can create notebooks in your Azure Databricks workspace to run code written 
 
 In this task, you'll import an existing notebook that contains some Python code.
 
-1. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
+1. In the **Search resources, services, and docs (G+/) (1)** box, enter **dp203-<inject key="DeploymentID" enableCopy="false"/>**, and then select the **Resource group (2)**.
 
-   ![](./images/24-06-25-l1-8.png) 
-  
-1. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
-
-   ![Create storage by clicking confirm.](./images/24-06-25-l5-3.png)
-
-1. In the **Overview** page for your workspace, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab, signing in if prompted.
-
-    ![Create storage by clicking confirm.](./images/21056.png)  
+   ![](./images/data-brick-gt-lab1-ex1-g11.png)
  
-    > **Tip**: As you use the Databricks Workspace portal, various tips and notifications may be displayed. Dismiss these and follow the instructions provided to complete the tasks in this exercise.
+1. In the **Overview (1)** page, select the **databricks<inject key="DeploymentID" enableCopy="false"/> (2)** resource.
+
+   ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g12.png)
+
+1. In the **Overview** page, select **Launch Workspace**.
+
+   ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g13.png)
+ 
+    > **Note**: As you use the Databricks Workspace portal, various tips and notifications may be displayed. Dismiss these and follow the instructions provided to complete the tasks in this exercise.
 
 1. View the Azure Databricks workspace portal and note that the sidebar on the left side contains icons for the various tasks you can perform.
 
-1. In the sidebar on the left, select **Workspace (1)**. Then select the **&#8962; Home (2)** folder.
+1. Select **Workspace (1)** from the left navigation pane, and then choose **Home (2)** under the Workspace section.
 
-1. At the top of the page, in the **&#8942; (3)** menu next to your user name, select **Import (4)**.
+   ![](./images/data-brick-gt2-lab2-ex1-g1.png)
 
-   ![Create storage by clicking confirm.](./images/24-06-25-12-1.png)
-  
-1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs-Azure-Databricks/Allfiles/labs/27/Process-Data.ipynb` **(2)** and then click on **Import (3)**.
+1. Select the **More options (1)** menu, and then choose **Import (2)**.
+
+   ![](./images/data-brick-gt2-lab2-ex1-g2.png)
+
+1. In the **Import** dialog box, select **URL (1)**, enter the provided link in the **URL (2)** field, and then choose **Import (3)**.
+
+    ```
+    https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs-Azure-Databricks/Allfiles/labs/27/Process-Data.ipynb
+    ```
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-4.png)
 
@@ -110,7 +125,7 @@ In this task, you'll import an existing notebook that contains some Python code.
     - Download data from GitHub and save it in the specified folder in the Databricks File System (DBFS).
     - Exit the notebook, returning to the path where the data was saved as an output
 
-       > **Tip**: The notebook could contain practically any data processing logic you need. This simple example is designed to show the key principles.
+       > **Note**: The notebook could contain practically any data processing logic you need. This simple example is designed to show the key principles.
 
 ## Task 3: Enable Azure Databricks integration with Azure Data Factory
 
@@ -154,7 +169,7 @@ In this task, you will generate an access token in the Azure Databricks Portal.
 
    ![Create storage by clicking confirm.](./images/24-06-25-l5-11.png)
 
-   ![Create storage by clicking confirm.](./images/lab5-5n.png)
+   ![Create storage by clicking confirm.](./images/data-brick-gt5-lab5-ex1-g2.png)
    
 1. On the **Manage** page, in the **Linked services (1)** tab, select **+ New (2)** to add a new linked service.
 
@@ -183,7 +198,7 @@ In this task, you will generate an access token in the Azure Databricks Portal.
   
       Once all the necessary fields are provided, click on **Create (16).**
 
-    ![Create storage by clicking confirm.](./images/24-06-25-l5-14.png)
+    ![Create storage by clicking confirm.](./images/data-brick-gt5-lab5-ex1-g3.png)
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-15.png)
 
@@ -214,15 +229,30 @@ In this task, you will create a pipeline and use it to run the Azure Databricks 
         - **Name**: Process Data **(1)**
     - **Azure Databricks (2)**:
         - **Databricks linked service**: Select the **AzureDatabricks (3)** linked service you created previously
-    - **Settings (4)**:
-        - **Notebook path (6)** **: **Browse (5)** to the **Users/your_user_name** folder and select the **Process-Data** notebook
-        - **Base parameters**: Add a **new (7)** parameter named **folder (8)** with the value **product_data (9)**
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-18.png)
 
-    ![Create storage by clicking confirm.](./images/24-06-25-l5-19.png)
+    ![Create storage by clicking confirm.](./images/24-06-25-l5-19.png) 
 
-    ![Create storage by clicking confirm.](./images/24-06-25-l5-20.png)   
+1. In the **Settings (1)** tab, select **Browse (2)** to choose the notebook path.
+
+   ![](./images/data-brick-gt5-lab5-ex1-g5.png)
+
+1. In the **Browse** dialog box, select **Users**.
+
+   ![](./images/data-brick-gt5-lab5-ex1-g6.png)
+
+1. In the **Users** folder, select **<inject key="AzureAdUserEmail"></inject>**.
+
+   ![](./images/data-brick-gt5-lab5-ex1-g7.png)
+
+1. In the **Browse** dialog box, select **Process-Data (1)**, and then choose **OK (2)**.
+
+   ![](./images/data-brick-gt5-lab5-ex1-g8.png)
+
+1. Under **Base parameters**, select **New (1)**, enter **folder (2)** in the **Name** field, and set the **Value (3)** to **product_data**.
+
+   ![](./images/data-brick-gt5-lab5-ex1-g9.png)
        
 1. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it and click **Publish (3)** finally.
 
