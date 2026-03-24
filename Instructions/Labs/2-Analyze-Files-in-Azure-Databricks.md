@@ -164,3 +164,4 @@ In this task, you will be importing a notebook to the Azure Databricks Portal.
 In this lab, you have performed essential tasks to get started with Azure Databricks. You provisioned an Azure Databricks workspace, created a cluster, and explored data using a notebook to gain insights and perform analyses.
 
 ## You have successfully completed the lab.
+ 

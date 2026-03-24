@@ -128,25 +128,25 @@ In this task, you'll create a *single-node* cluster to minimize the compute reso
 
 In this task, you'll use code in a notebook to explore Delta Lake in Azure Databricks.
 
-1. In the Azure Databricks workspace portal for your workspace, in the sidebar on the left, select **Workspace (1)**. Then select the **&#8962; Home (2)** folder.
+1. Select **Workspace (1)** from the left navigation pane, and then choose **Home (2)** under the Workspace section.
 
-1. At the top of the page, in the **&#8942; (3)** menu next to your user name, select **Import (4)**.
+   ![](./images/data-brick-gt2-lab2-ex1-g1.png)
 
-   ![Create storage by clicking confirm.](./images/24-06-25-12-1.png)
+1. Select the **More options (1)** menu, and then choose **Import (2)**.
 
-1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from the following url.
+   ![](./images/data-brick-gt2-lab2-ex1-g2.png)
+
+1. In the **Import** dialog box, select **URL (1)**, enter the provided link in the **URL (2)** field, and then choose **Import (3)**.
 
     ```
     https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs-Azure-Databricks/Allfiles/labs/25/Delta-Lake.ipynb
     ```
 
-   ![Create storage by clicking confirm.](./images/24-06-25-l3-1.png)
-   
-1. Connect the notebook to your cluster, and follow the instructions it contains, running the cells it contains to explore Delta Lake functionality.
+   ![](./images/data-brick-gt2-lab2-ex1-g3.png)
 
-   >**Note:** While running the cells upon following the instructions, if the execution is delayed, please wait for 15-20 minutes.
+1. Connect the notebook to your cluster, and follow the instructions it contains; run the cells it contains to explore data in files.
 
-   ![Create storage by clicking confirm.](./images/24-06-25-l3-2.png)
+   ![Create storage by clicking confirm.](./images/24-06-25-12-3.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
