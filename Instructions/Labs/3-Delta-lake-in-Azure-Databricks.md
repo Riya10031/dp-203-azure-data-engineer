@@ -4,7 +4,7 @@
 
 Delta Lake is an open-source project to build a transactional data storage layer for Spark on top of a data lake. Delta Lake adds support for relational semantics for both batch and streaming data operations, and enables the creation of a *Lakehouse* architecture in which Apache Spark can be used to process and query data in tables that are based on underlying files in the data lake.
 
-In this lab, you'll learn about Delta Lake which is an open source relational storage area for Spark that you can use to implement a data lakehouse architecture in Azure Databricks.
+In this lab, you'll learn about Delta Lake, which is an open source relational storage area for Spark that you can use to implement a data lakehouse architecture in Azure Databricks.
 
 ### Lab Objectives
 
