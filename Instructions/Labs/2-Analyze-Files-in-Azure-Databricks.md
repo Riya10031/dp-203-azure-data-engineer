@@ -132,19 +132,21 @@ As in many Spark environments, Databricks supports the use of notebooks to combi
 
 In this task, you will be importing a notebook to the Azure Databricks Portal.
 
-1. In the **Azure Databricks workspace portal** for your workspace, in the sidebar on the left, select **Workspace (1)**. Then select the **&#8962; Home (2)** folder.
+1. Select **Workspace (1)** from the left navigation pane, and then choose **Home (2)** under the Workspace section.
 
-1. At the top of the page, in the **&#8942; (3)** menu next to your user name, select **Import (4)**.
+   ![](./images/data-brick-gt2-lab2-ex1-g1.png)
 
-   ![Create storage by clicking confirm.](./images/24-06-25-12-1.png)
+1. Select the **More options (1)** menu, and then choose **Import (2)**.
 
-1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from the following url.
+   ![](./images/data-brick-gt2-lab2-ex1-g2.png)
+
+1. In the **Import** dialog box, select **URL (1)**, enter the provided link in the **URL (2)** field, and then choose **Import (3)**.
 
     ```
     https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs-Azure-Databricks/Allfiles/labs/24/Databricks-Spark.ipynb
     ```
 
-   ![Create storage by clicking confirm.](./images/24-06-25-12-2.png)
+   ![](./images/data-brick-gt2-lab2-ex1-g3.png)
 
 1. Connect the notebook to your cluster, and follow the instructions it contains; run the cells it contains to explore data in files.
 
