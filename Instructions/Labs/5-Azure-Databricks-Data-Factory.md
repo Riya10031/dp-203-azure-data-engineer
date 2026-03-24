@@ -254,7 +254,7 @@ In this task, you will create a pipeline and use it to run the Azure Databricks 
 
    ![](./images/data-brick-gt5-lab5-ex1-g9.png)
        
-1. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it and click **Publish (3)** finally.
+1. Use the **Validate (1)** button above the pipeline designer surface to validate the pipeline. Then use the **Publish all (2)** button to publish (save) it, and click **Publish (3)** finally.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-21.png)
 
