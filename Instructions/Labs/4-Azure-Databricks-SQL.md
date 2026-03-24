@@ -104,7 +104,7 @@ In this task, you will launch the workspace, and you'll view and start SQL Wareh
 
 1. View the Azure Databricks workspace portal and note that the sidebar on the left side contains links for the various types of tasks you can perform.
   
-1. Select **SQL Warehouses (1)** from the left navigation pane, and then choose the **SQL warehouses (2)** tab under Compute.
+1. Select **SQL Warehouses (1)** from the left navigation pane, and then choose the **SQL Warehouses (2)** tab under Compute.
 
    ![](./images/data-brick-gt4-lab4-ex1-g1.png)
 
@@ -173,7 +173,7 @@ In this task, you will create a table schema using an external file.
    https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/blob/guidedlabs-Azure-Databricks/Allfiles/labs/26/data/products.csv
    ```
 
-1. click on **download** icon to download the file to your Lab VM.
+1. Click on the **download** icon to download the file to your Lab VM.
 
    ![](./images/data-brick-gt4-lab4-ex1-g11.png)
 
@@ -201,7 +201,7 @@ The ability to create a table by importing data from a file makes it easy to pop
 
 ## Task 5: Create a query
 
-In this task, you will create a query in the adventureworks database, which was created earlier.
+In this task, you will create a query in the AdventureWorks database, which was created earlier.
 
 1. In the sidebar, select **+ New (1)** and then select **Query (2)**.
 
