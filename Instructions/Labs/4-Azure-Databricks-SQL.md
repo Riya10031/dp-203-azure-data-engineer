@@ -102,46 +102,51 @@ In this task, you will launch the workspace, and you'll view and start SQL Wareh
 
    > **Note**: In the Databricks Workspace portal, dismiss any tips or notifications that appear, and continue with the lab instructions.
 
-
 1. View the Azure Databricks workspace portal and note that the sidebar on the left side contains links for the various types of tasks you can perform.
   
-1. In the sidebar, under **SQL (1)**, select **SQL Warehouses (2)**.
+1. Select **SQL Warehouses (1)** from the left navigation pane, and then choose the **SQL warehouses (2)** tab under Compute.
 
-   ![](./images/24-06-25-l4-1.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g1.png)
 
 1. Observe that the workspace already includes a SQL Warehouse named **Serverless Starter Warehouse**.
 
-   ![](./images/24-06-25-l4-2.png)
+1. Select the **More options (1)** menu for the SQL Warehouse, and then choose **Edit (2)**.
 
-1. In the **Actions** (**&#8285;**) **(1)** menu for the SQL Warehouse, select **Edit (2)**.
-
-   ![](./images/24-06-25-l4-3.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g2.png)
 
 1. A Page appears where you can configure the Cluster size, set the **Cluster size** property to **2X-Small (1)**, and **Save (2)** your changes.
 
-   ![](./images/24-06-25-l4-4.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g3.png)
     
 1. Use the **Start** button to start the SQL Warehouse (which may take a minute or two).
 
-   ![](./images/24-06-25-l4-5.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g4.png)
 
 1. Now your SQL Warehouse will be up and running.
 
    ![](./images/ad-lab4-6.png)
 
-> **Note**: If your SQL Warehouse fails to start, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned. See [Required Azure vCPU quota](https://docs.microsoft.com/azure/databricks/sql/admin/sql-endpoints#required-azure-vcpu-quota) for details. If this happens, you can try requesting a quota increase as detailed in the error message when the warehouse fails to start. Alternatively, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
+   > **Note**: If your SQL Warehouse fails to start, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned. See [Required Azure vCPU quota](https://docs.microsoft.com/azure/databricks/sql/admin/sql-endpoints#required-azure-vcpu-quota) for details. If this happens, you can try requesting a quota increase as detailed in the error message when the warehouse fails to start. Alternatively, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
 ## Task 3: Create a database schema
 
 In this task, you will be creating a database schema in your Azure Databricks Portal.
 
-1. When your SQL Warehouse is *running*, select **SQL Editor** in the sidebar.
+1. Select **SQL Editor** from the left navigation pane.
 
-   ![](./images/ad-lab4-7.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g5.png)
 
-1. In the **Schema browser** pane, observe that the **hive_metastore** catalog contains a database named **default**.
+1. Select the **Schema browser (1)** icon, and then expand **hive_metastore (2)**.
 
-   ![](./images/24-06-25-l4-6.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g6.png)
+
+1. In the **Create new** section, select **SQL Query**.
+
+   ![](./images/data-brick-gt4-lab4-ex1-g7.png)
+
+1. Select **Got it** to continue.
+
+   ![](./images/data-brick-gt4-lab4-ex1-g8.png)
    
 1. In the **New query** pane, enter the following SQL code:
 
@@ -150,11 +155,11 @@ In this task, you will be creating a database schema in your Azure Databricks Po
     ```    
 1. Use the **&#9658; Run (1000)** button to run the SQL code.
 
-   ![](./images/ad-lab4-9.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g9.png)
 
-1. When the code has been successfully executed, in the **Schema browser** pane, use the refresh button at the bottom of the pane to refresh the list. Then expand **hive_metastore (1)** and **adventureworks (2)**, and observe that the database has been created, but contains no tables.
+1. Verify the schema creation by confirming the **Table (1)** section shows *OK*, and then expand **adventureworks (2)** under **hive_metastore**.
 
-   ![](./images/24-06-25-l4-7.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g10.png)
 
 You can use the **default** database for your tables, but when building an analytical data store, it's best to create custom databases for specific data.
 
@@ -162,27 +167,35 @@ You can use the **default** database for your tables, but when building an analy
 
 In this task, you will create a table schema using an external file.
 
-1. Download the [**products.csv**](https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/blob/guidedlabs/Allfiles/labs/26/data/products.csv) file to your local computer to download the file press **Ctrl+S**, saving it as **products.csv**, .
+1. In the LabVM, open the following URL in a new browser tab to download the **products.csv** file:
+
+   ```
+   https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/blob/guidedlabs-Azure-Databricks/Allfiles/labs/26/data/products.csv
+   ```
+
+1. click on **download** icon to download the file to your Lab VM.
+
+   ![](./images/data-brick-gt4-lab4-ex1-g11.png)
 
 1. In the Azure Databricks workspace portal, in the sidebar, select **+ New (1)** and then select **Add or upload data (2)**
 
-    ![](./images/ad-lab4-11.png)
+    ![](./images/data-brick-gt4-lab4-ex1-g12.png)
 
 1. In order to upload the **products.csv** file, click on **Create or modify table**.
 
-   ![](./images/24-06-25-l4-8.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g13.png)
 
 1. Then click on **browse** to upload the file that you have downloaded to your computer.
 
-   ![](./images/24-06-25-l4-9.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g14.png)
 
 1. Once **products.csv** file has been uploaded **(1)**. In the **Add data** page, select the **hive_metastore (2)** from the Catalog dropdown, select the **adventureworks (3)** database from the schema dropdown, and set the table name to **products (4)**. Then select **Create table (5)** on the bottom right corner of the page.
 
-   ![](./images/24-06-25-l4-10.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g15.png)
 
 1. Now the table named **products** has been created under **adventureworks** database, review the table details.
 
-   ![](./images/24-06-25-l4-11.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g16.png)
 
 The ability to create a table by importing data from a file makes it easy to populate a database. You can also use Spark SQL to create tables using code. The tables themselves are metadata definitions in the hive metastore, and the data they contain is stored in Delta format in Databricks File System (DBFS) storage.
 
@@ -192,11 +205,7 @@ In this task, you will create a query in the adventureworks database, which was 
 
 1. In the sidebar, select **+ New (1)** and then select **Query (2)**.
 
-   ![](./images/ad-lab4-16.png)
-
-1. In the **Schema browser** pane, expand **hive_metastore** and **adventureworks**, and verify that the **products** table is listed.
-
-   ![](./images/24-06-25-l4-11.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g17.png)
 
 1. In the **New query** pane, enter the following SQL code:
 
@@ -207,21 +216,11 @@ In this task, you will create a query in the adventureworks database, which was 
 
 1. Use the **&#9658;Run (1000)** button to run the SQL code.
 
-   ![](./images/24-06-25-l4-12.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g18.png)
 
 1. When the query has completed, review the table of results.
 
-   ![](./images/ad-lab4-18.png)
-
-1. Use the **Save** button at the top right of the query editor to save the query.
-
-   ![](./images/ad-lab4-19.png)
-  
-1. Save the query by the name **Products and Categories (1)** and then click on **Save (2)**.
-
-   ![](./images/ad-lab4-20.png)
-
-Saving a query makes it easy to retrieve the same data again at a later time.
+   ![](./images/data-brick-gt4-lab4-ex1-g19.png)
 
 ## Task 6: Create a dashboard
 
@@ -233,32 +232,34 @@ In this task, you will be creating a dashboard to visualize the data of the Prod
 
    ![](./images/24-06-25-l4-13.png)
 
-1. In the dialog box, change the name to **Adventure Works Products (1)**.
+1. Verify the dashboard name is updated to **Adventure Works Products**.
 
-1. Click on the **Add a visualization** **(2)** dialog box, select the **Products (3)** dataset.
+   ![](./images/data-brick-gt4-lab4-ex1-g21.png)
 
-1. In the visualization editor, set the following properties:
-    - **Visualization type (4)**: bar
-    - **X columns (5)**: Product ID : Count
+1. In the visualization editor, configure the chart as follows:
+   - Select the chart icon (1).
+   - Set **Dataset (2)** to *products*.
+   - Set **Visualization (3)** to *Bar*.
+   - Set **X axis (4)** to *COUNT(*)*.
+   - Set **Y axis (5)** to *Category*.
 
-      >**Note:** Click on **+** icon beside X column and then select **Product ID** from the drop down , initially it appears as **SUM(ProductID)**, Hence click on **SUM(ProductID)** and change **SUM** to **Count**.
-       
-    - **Y column (6)**: Category
-    - **color/Group by**: *Leave blank*
+      ![](./images/data-brick-gt4-lab4-ex1-g22.png)
 
-    Then **Publish (7)** the visualization.
-   
-    ![](./images/Dashboard4.png)
-   
-1. A pop-up appears, click on **Publish**.
+1. Select **Publish** to publish the dashboard.
 
-    ![](./images/24-06-25-l4-14.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g23.png)
 
-1. Now the Dashboard has been published successfully. Click on **here** to view the Dashboard. Alternatively, you can also view the dashboard by navigating to the **Dashboard** in the left pane.
+1. In the **Publish Adventure Works Products** dialog box, select **Share data permission (default) (1)**, and then choose **Publish (2)**.
 
-   ![](./images/ad-lab4-23.png)
+   ![](./images/data-brick-gt4-lab4-ex1-g24.png)
 
-   ![](./images/ad-lab4-24.png)
+1. Select **Close** to exit the sharing dialog box.
+
+   ![](./images/data-brick-gt4-lab4-ex1-g25.png)
+
+1. Select **Dashboards (1)** from the left navigation pane, and then choose **Adventure Works Products (2)**.
+
+   ![](./images/data-brick-gt4-lab4-ex1-g26.png)
    
 Dashboards are a great way to share data tables and visualizations with business users. You can schedule the dashboards to be refreshed periodically and emailed to subscribers.
 
