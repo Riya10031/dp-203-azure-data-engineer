@@ -101,7 +101,7 @@ In this task, you'll import an existing notebook that contains some Python code.
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-1.png)
   
-1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs/Allfiles/labs/27/Process-Data.ipynb` **(2)** and then click on **Import (3)**.
+1. Then in the **Import** dialog box, select **URL (1)** , in the **URL** import the notebook from `https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs-Azure-Databricks/Allfiles/labs/27/Process-Data.ipynb` **(2)** and then click on **Import (3)**.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-4.png)
 
