@@ -148,6 +148,8 @@ In this task, you'll use code in a notebook to explore Delta Lake in Azure Datab
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-3.png)
 
+   > **Note**: When running the notebook cells, you may see `rm: cannot remove` error messages in the output of `%sh` cells. These are expected and harmless — they simply mean the directories didn't exist yet on the first run. The cells will still complete successfully.
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.

@@ -21,78 +21,87 @@ In this lab, you will perform:
 
 In this task, you'll use a script to provision a new Azure Databricks workspace.
 
-1. In a web browser, sign in to the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal.
+1. In a web browser, navigate to the **Azure portal**, open the following URL in the address bar, and sign in with the Lab credentials if you are not already signed in.
 
-    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-cl.png)
-
-    >**Note:** If you are not able to see the **[\>_]** button, click on the **ellipses (1)** to the right of the search bar at the top of the page and then select **Cloud Shell (2)** from the drop-down options.
-
-    ![Azure portal with a cloud shell pane-ellipses](./images/cloudshell-ellipses.png)
-
-1. Selecting a ***PowerShell*** environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
-
-    ![Azure portal with a cloud shell pane](./images/24-06-25-l1-1.png)
-
-1. Within the Getting Started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
-
-   ![](./images/24-06-25-l1-3.png)
-
-1. Within the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
-
-   ![](./images/24-06-25-l1-2.png)
-
-1. If you are prompted to create storage for your Cloud Shell, ensure your **Subscription** is selected, Please make sure you have selected your **Resource Group** which is **Azure-Databricks (1)**, select **Region** from the drop-down **(US) East US (2)** and enter **storage<inject key="DeploymentID" enableCopy="false"/> (3)** for the **Storage account name** and enter **fileshare1 (4)** for the **File share name**, then click on **Create (5)**.
+   ```
+   https://portal.azure.com
+   ```
    
-   ![Create storage by clicking confirm.](./images/24-06-25-l1-4.png "Create storage advanced settings")
+1. Use the **[\>_]** **icon** to the right of the search bar to create a new **Cloud Shell** in the Azure portal.
 
-1. You can see a pop-up appearing **Deployment is in Progress**, wait for the PowerShell terminal to start.
+   ![Azure portal with a cloud shell pane](./images/data-brick-gt-lab1-ex1-g1.png)
 
-    ![](./images/24-06-25-l1-5.png)
+1. In the **Welcome to Azure Cloud Shell** pane, select **PowerShell**.
 
-1. In the PowerShell pane, paste the following commands and click Enter to clone this repo:
+   ![Azure portal with a cloud shell pane](./images/data-brick-gt-lab1-ex1-g2.png)
 
-    ```
-    rm -r dp-203-azure-data-engineer -f
-    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
-    ```
+1. Within the Getting started pane, select **Mount storage account (1)**, select your **Storage account subscription (2)** from the dropdown and click **Apply (3)**.
+
+   ![](./images/data-brick-gt-lab1-ex1-g3.png)
+
+1. In the **Mount storage account** pane, select **I want to create a storage account (1)** and click **Next (2)**.
+
+   ![](./images/data-brick-gt-lab1-ex1-g4.png)
+
+1. In the **Create storage account** pane, provide the following details:
+
+   - **Subscription (1)**: Select the defualt **Subscription**  
+   - **Resource group (2)**: Select **Azure-Databricks**  
+   - **Region (3)**: Select **(US) East US**  
+   - **Storage account name (4)**: Enter **storage<inject key="DeploymentID" enableCopy="false"/>**  
+   - **File share (5)**: Enter **fileshare1**  
+   - select **Create (6)**.
+
+      ![](./images/data-brick-gt-lab1-ex1-g5.png)
+
+1. In the **Deployment is in progress** notification, wait for the PowerShell terminal to start.
+
+   ![](./images/data-brick-gt-lab1-ex1-g6.png)
+
+1. In the PowerShell pane, paste the following **commands** and click **Enter** to clone this repo:
+
+   ```
+   rm -r dp-203-azure-data-engineer -f
+   git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
+   ```
+
+   ![](./images/data-brick-gt-lab1-ex1-g7.png)
 
 1. After the repo has been cloned, enter the following commands to change to the folder for this lab and run the **setup.ps1** script it contains:
 
-    ```
-    cd dp-203-azure-data-engineer/Allfiles/labs/26
-    ./setup.ps1
-    ```
+   ```
+   cd dp-203-azure-data-engineer/Allfiles/labs/26
+   ./setup.ps1
+   ```
 
-1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. Wait for the script to complete (this may take a few minutes), and while waiting, review the following documentation.
 
-1. Wait for the script to complete - this typically takes around 5 minutes, but in some cases may take longer. While you are waiting, review the [What is data warehousing on Azure Databricks?](https://learn.microsoft.com/azure/databricks/sql/) article in the Azure Databricks documentation.
+   ```
+   https://learn.microsoft.com/azure/databricks/sql/
+   ```
 
-   ![Azure portal with a cloud shell pane](./images/24-06-25-l1-6.png)
+1. In the **Cloud Shell** window, select the **X** at the top right corner to close it after the script execution completes.
 
-1. Once the Script has completed its execution, close the **cloud shell** window by clicking on the **X**, which is located at the top right corner of the **cloud shell**
-
-   ![](./images/24-06-25-l1-7.png)
+   ![Azure portal with a cloud shell pane](./images/data-brick-gt-lab1-ex1-g10.png)
 
 ## Task 2: View and start a SQL Warehouse
 
 In this task, you will launch the workspace, and you'll view and start SQL Warehouse.
 
-1. When the Azure Databricks workspace resource has been deployed, go to it in the Azure portal.
+1. In the **Search resources, services, and docs (G+/) (1)** box, enter **dp203-<inject key="DeploymentID" enableCopy="false"/>**, and then select the **Resource group (2)**.
 
-1. In the Azure portal, in the **Search resources, services, and docs (G+/)** text box at the top of the Azure portal page, type **dp203-*xxxxxxx* (1)** resource group that was created by the script (or the resource group containing your existing Azure Databricks workspace) and select the **Resource group (2).**
-
-   ![](./images/24-06-25-l1-8.png)
+   ![](./images/data-brick-gt-lab1-ex1-g11.png)
  
-1. Select your Azure Databricks Service resource (named **databricks*xxxxxxx*** if you used the setup script to create it).
+1. In the **Overview (1)** page, select the **databricks<inject key="DeploymentID" enableCopy="false"/> (2)** resource.
 
-    ![Create storage by clicking confirm.](./images/24-06-25-l1-9.png)
+   ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g12.png)
 
-1. In the **Overview** page for your workspace, use the **Launch Workspace** button to open your Azure Databricks workspace in a new browser tab, signing in if prompted.
+1. In the **Overview** page, select **Launch Workspace**.
 
-    ![Create storage by clicking confirm.](./images/21056.png)
+   ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g13.png)
 
-    > **Tip**: As you use the Databricks Workspace portal, various tips and notifications may be displayed. Dismiss these and follow the instructions provided to complete the tasks in this exercise.
+   > **Note**: In the Databricks Workspace portal, dismiss any tips or notifications that appear, and continue with the lab instructions.
+
 
 1. View the Azure Databricks workspace portal and note that the sidebar on the left side contains links for the various types of tasks you can perform.
   
