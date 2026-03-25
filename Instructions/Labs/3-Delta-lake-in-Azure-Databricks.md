@@ -4,7 +4,7 @@
 
 Delta Lake is an open-source project to build a transactional data storage layer for Spark on top of a data lake. Delta Lake adds support for relational semantics for both batch and streaming data operations, and enables the creation of a *Lakehouse* architecture in which Apache Spark can be used to process and query data in tables that are based on underlying files in the data lake.
 
-In this lab, you'll learn about Delta Lake which is an open source relational storage area for Spark that you can use to implement a data lakehouse architecture in Azure Databricks.
+In this lab, you'll learn about Delta Lake, which is an open source relational storage area for Spark that you can use to implement a data lakehouse architecture in Azure Databricks.
 
 ### Lab Objectives
 
@@ -147,6 +147,8 @@ In this task, you'll use code in a notebook to explore Delta Lake in Azure Datab
 1. Connect the notebook to your cluster, and follow the instructions it contains; run the cells it contains to explore data in files.
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-3.png)
+
+   > **Note**: When running the notebook cells, you may see `rm: cannot remove` error messages in the output of `%sh` cells. These are expected and harmless — they simply mean the directories didn't exist yet on the first run. The cells will still complete successfully.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
