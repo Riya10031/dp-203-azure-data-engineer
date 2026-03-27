@@ -23,36 +23,40 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
     
-    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
+    ![Azure portal with a cloud shell pane](./images/DA-image1.png)
 
-    ![Azure portal with a cloud shell pane](./images/cl2.png)
+    ![Azure portal with a cloud shell pane](./images/DA-image2.png)
 
     
-2. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+1. On Getting started window choose **Mount storage account(1)** then under Storage account subscription select your available **subscription (2)** from the dropdown and click on **Apply (3)**.
 
-   ![Azure portal with a cloud shell pane](./images/cl3.png)
+   ![Azure portal with a cloud shell pane](images/DA-image3.png)
 
-3. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+1. Within the Mount storage account pane, select **we will create a storage account for you (1)** and click **Next (2)**.
 
-4. In the PowerShell pane, enter the following commands to clone this repo:
+    ![Azure portal with a cloud shell pane](images/DA-image4.png)
+
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203-azure-data-engineer -f
     git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
-5. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203-azure-data-engineer/Allfiles/labs/14
     ./setup.ps1
     ```
 
-6. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
+1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
 
     > **Note**: Be sure to remember this password!
 
-7. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Link for Azure Cosmos DB?](https://docs.microsoft.com/azure/cosmos-db/synapse-link) article in the Azure Synapse Analytics documentation.
+1. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Link for Azure Cosmos DB?](https://docs.microsoft.com/azure/cosmos-db/synapse-link) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Configure Synapse Link in Azure Cosmos DB
 
@@ -70,30 +74,33 @@ In this task, you will enable Synapse link feature in your Cosmos DB account and
 
     > **Note**:If a **Welcome** dialog box is displayed, close it.
 
-3. At the top of the **Data Explorer** page, close all the pop-up windows until **Enable Azure Synapse Link** button is visible and click on **Enable Azure Synapse Link** to enable Synapse Link.
+3. At the top of the **Data Explorer (1)** page, close all the pop-up windows until **Enable Azure Synapse Link** button is visible and click on **Enable Azure Synapse Link (2)** to enable Synapse Link. On the **Enable Azure Synapse Link on your Cosmos DB account** pop-up, select **Enable Azure Synapse Link**.
 
-    ![Cosmos DB Data Explorer with Enable Azure Synapse Link button highlighted](./images/l14-1.png)
-
-4. On the left side of the page, in the **Integrations** section, select the **Azure Synapse Link** page and verify that the status of the account is *Enabled*.
+    ![Cosmos DB Data Explorer with Enable Azure Synapse Link button highlighted](./images/img-01-01.png)
 
 ### Task 2.2: Create an analytical store container
 
-1. Return to the **Data Explorer** page, and use the **new Container** button (or tile) to create a new container with the following settings:
-    - **Database id**: *(Create new)* AdventureWorks
+1. Return to the **Data Explorer** page, select the **+ New Container** button to create a new container with the following settings. Select **OK (8)**: 
+
+    - **Database id**: *(Create new) (1)* **AdventureWorks (2)**
     - **Share throughput across containers**: Unselected
-    - **Container id**: Sales
-    - **Partition key**: /customerid
-    - **Container throughput (autoscale)**: Autoscale
-    - **Container Max RU/s**: 4000
-    - **Analytical store**: On
+    - **Container id**: **Sales (3)**
+    - **Partition key**: **/customerid (4)**
+    - **Container throughput (autoscale)**: **Autoscale (5)**
+    - **Container Max RU/s (6)**: 4000
+    - **Analytical store (7)**: On
 
-    > **Note**: In this scenario, **customerid** is used for partition key as it's likely to be used in many queries to retrieve customer and sales order information in a hypothetical application, it has relatively high cardinality (number of unique values), so it will allow the container to scale as the number of customers and sales orders grows. Using autoscale and setting the maximum value to 4000 RU/s is appropriate for a new application with initially low query volumes. A max value 4000 RU/s will enable the container to automatically scale between this value all the way down to 10% of this max value (400 RU/s) when not needed.
+        ![The Adventure Works, Sales, Items folder in Data Explorer](./images/img-01-02-011.png)
 
-2. After the container has been created, in the **Data Explorer** page, expand the **AdventureWorks** database and its **Sales** folder; and then select the **Items** folder.
+        ![The Adventure Works, Sales, Items folder in Data Explorer](./images/img-01-03.png)
 
-    ![The Adventure Works, Sales, Items folder in Data Explorer](./images/l14-2.png)
+        > **Note**: In this scenario, **customerid** is used for partition key as it's likely to be used in many queries to retrieve customer and sales order information in a hypothetical application, it has relatively high cardinality (number of unique values), so it will allow the container to scale as the number of customers and sales orders grows. Using autoscale and setting the maximum value to 4000 RU/s is appropriate for a new application with initially low query volumes. A max value 4000 RU/s will enable the container to automatically scale between this value all the way down to 10% of this max value (400 RU/s) when not needed.
 
-3. Use the **New Item** button to create a new customer item based on the following JSON. Then save the new item (some additional metadata fields will be added when you save the item).
+2. After the container has been created, in the **Data Explorer (1)** page, expand the **AdventureWorks (2)** database and its **Sales (3)** folder; and then select the **Items (4)** folder.
+
+    ![The Adventure Works, Sales, Items folder in Data Explorer](./images/img-01-04.png)
+
+3. Use the **New Item (1)** button to create a new customer item based on the following **JSON (2)**. Then **Save (3)** the new item (some additional metadata fields will be added when you save the item).
 
     ```json
     {
@@ -109,6 +116,8 @@ In this task, you will enable Synapse link feature in your Cosmos DB account and
         "price": 3399.99
     }
     ```
+
+    ![The Adventure Works, Sales, Items folder in Data Explorer](./images/img-01-05.png)
 
 4. Add a second item with the following JSON:
 
@@ -161,34 +170,44 @@ In this task, you will be configuring the Synapse Link in Analytics.
 
 1. In the Azure portal, close the blade for your Cosmos DB account if it is still open, and return to the **dp203-*xxxxxxx*** resource group.
 
-2. Open the **synapse*xxxxxxx*** Synapse workspace, and on its **Overview** page, in the **Open Synapse Studio** card, select **Open** to open Synapse Studio in a new browser tab; sign in if prompted.
+2. Open the **synapse*xxxxxxx*** Synapse workspace, and on its **Overview** page, in the **Open Synapse Studio (1)** card, select **Open (2)** to open Synapse Studio in a new browser tab; sign in if prompted.
 
-   ![](./images/labimg2.png)
+   ![](./images/img-01-06.png)
 
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio.
 
-4. On the **Data** page, view the **Linked** tab. Your workspace should already include a link to your Azure Data Lake Storage Gen2 storage account, but no link to your Cosmos DB account.
+4. On the **Data (1)** page, view the **Linked (2)** tab. Your workspace should already include a link to your **Azure Data Lake Storage Gen2** storage account, but no link to your Cosmos DB account.
 
    ![](./images/labimg3.png)
 
-5. In the **+** menu, select **Connect to external data**, and then select **Azure Cosmos DB for NoSQL**.
+5. Select the **+ (1)** menu, select **Connect to external data (2)**. On the **Connect to external data** page, select **Azure Cosmos DB for NoSQL (3)**, and select **Continue (4)**.
 
-    ![Adding an Azure Cosmos DB NoSQl API external data link](./images/l14-3.png)
+    ![Adding an Azure Cosmos DB NoSQl API external data link](./images/img-01-07.png)
 
-6. Continue, and create a new Cosmos DB connection with the following settings and click on **Create**
-    - **Name**: AdventureWorks
-    - **Description**: AdventureWorks Cosmos DB database
-    - **Connect via integration runtime**: AutoResolveIntegrationRuntime
-    - **Authentication type**: Account key
-    - **Connection string**: *selected*
-    - **Account selection method**: From subscription
-    - **Azure subscription**: *select your Azure subscription*
-    - **Azure Cosmos DB account name**: *select your **cosmosxxxxxxx** account*
-    - **Database name**: AdventureWorks
-7. After creating the connection, use the **&#8635;** button at the top right of the **Data** page to refresh the view until an **Azure Cosmos DB** category is listed in the **Linked** pane.
-8. Expand the **Azure Cosmos DB** category to see the **AdventureWorks** connection you created and the **Sales** container it contains.
+    ![Adding an Azure Cosmos DB NoSQl API external data link](./images/img-01-08-01.png)
 
-    ![Adding an Azure Cosmos DB SQl API external data link](./images/l-14-4.png)
+6. Continue, and create a new Cosmos DB connection with the following settings and click on **Create (10)**
+
+    - **Name (1)**: AdventureWorks
+    - **Description (2)**: AdventureWorks Cosmos DB database
+    - **Connect via integration runtime (3)**: AutoResolveIntegrationRuntime
+    - **Authentication type (4)**: Account key
+    - **Connection string (5)**: *selected*
+    - **Account selection method (6)**: From subscription
+    - **Azure subscription (7)**: *select your Azure subscription*
+    - **Azure Cosmos DB account name (8)**: *select your **cosmosxxxxxxx** account*
+    - **Database name (9)**: AdventureWorks
+
+        ![Adding an Azure Cosmos DB NoSQl API external data link](./images/img-01-09.png)
+
+        ![Adding an Azure Cosmos DB NoSQl API external data link](./images/img-01-10.png)
+    
+7. After creating the connection, use the **&#8635;** button at the top right of the **Data (1)** page to refresh the view until an **Azure Cosmos DB** category is listed in the **Linked** pane.
+
+
+8. Expand the **Azure Cosmos DB (2)** category to see the **AdventureWorks (3)** connection you created and the **Sales (4)** container it contains.
+
+    ![Adding an Azure Cosmos DB SQl API external data link](./images/img-01-11.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
   - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -205,8 +224,12 @@ In this task, you will query data in Azure Cosmos DB using spark pool in Azure S
 
 ### Task 4.1: Query Azure Cosmos DB from a Spark pool
 
-1. In the **Data** pane, select the **Sales** container, and in its **...** menu, select **New Notebook** > **Load to DataFrame**.
+1. In the **Data** pane, select the **Sales (1)** container, and in its **...** menu, select **New Notebook (2)** > **Load to DataFrame (3)**.
+
+    ![Adding an Azure Cosmos DB SQl API external data link](./images/img-01-12.png)
+
 2. In the new **Notebook 1** tab that opens, in the **Attach to** list, select your Spark pool (**spark*xxxxxxx***). Then use the **&#9655; Run all** button to run all of the cells in the notebook (there's currently only one!).
+
 
    >**Note**: If you don't find the **Attach to** option, kindly collapse the **Data** pane to view the **Attach to** option next to the outline option.
    

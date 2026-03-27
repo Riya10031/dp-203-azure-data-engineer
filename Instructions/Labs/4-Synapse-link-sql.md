@@ -21,38 +21,42 @@ In this task, you'll synchronize data from an Azure SQL Database resource to an 
 
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, and select ***PowerShell*** environment.
     
-    ![Azure portal with a cloud shell pane](./images/cloud-shell1.png)
+    ![Azure portal with a cloud shell pane](./images/DA-image1.png)
 
-    ![Azure portal with a cloud shell pane](./images/cl2.png)
+    ![Azure portal with a cloud shell pane](./images/DA-image2.png)
 
     
-2. In the **Getting Started** menu,choose **No storage account required (1)**,select your default **Subscription (2)** from the dropdown and click on **Apply (3)**
+1. On Getting started window choose **Mount storage account(1)** then under Storage account subscription select your available **subscription (2)** from the dropdown and click on **Apply (3)**.
 
-   ![Azure portal with a cloud shell pane](./images/cl3.png)
+   ![Azure portal with a cloud shell pane](images/DA-image3.png)
 
-3. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+1. Within the Mount storage account pane, select **we will create a storage account for you (1)** and click **Next (2)**.
 
-4. In the PowerShell pane, enter the following commands to clone this repo:
+    ![Azure portal with a cloud shell pane](images/DA-image4.png)
+
+1. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
+
+1. In the PowerShell pane, enter the following commands to clone this repo:
 
     ```
     rm -r dp-203-azure-data-engineer -f
     git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
-5. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
+1. After the repo has been cloned, enter the following commands to change to the folder for this exercise and run the **setup.ps1** script it contains:
 
     ```
     cd dp-203-azure-data-engineer/Allfiles/labs/15
     ./setup.ps1
     ```
 
-6. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
+1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
    
-7. When prompted, enter a suitable password for your Azure SQL Database.
+1. When prompted, enter a suitable password for your Azure SQL Database.
 
     > **Note**: Be sure to remember this password!
 
-8. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Link for SQL?](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/sql-synapse-link-overview) article in the Azure Synapse Analytics documentation.
+1. Wait for the script to complete - this typically takes around 15 minutes, but in some cases may take longer. While you are waiting, review the [What is Azure Synapse Link for SQL?](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/sql-synapse-link-overview) article in the Azure Synapse Analytics documentation.
 
 ## Task 2: Configure Azure SQL Database
 
@@ -64,23 +68,25 @@ In this task, you will work on configuring Azure SQL Database and save those con
 
     > **Note**: be careful not to mix up the Azure SQL server resource **sqldb*xxxxxxxx***) and the Azure Synapse Analytics dedicated SQL pool (**sql*xxxxxxxx***).
 
-2. In the page for your Azure SQL Server resource, in the pane on the left, in the **Security** section (near the bottom), select **Identity (1)**. Then under **System assigned managed identity**, set the **Status** option to **On (2)**. Then use the **&#128427; Save (3)** icon to save your configuration change.
+1. In the page for your Azure SQL Server resource, on left navigation menu, under the **Security** section (near the bottom), select **Identity (1)**. Then under **System assigned managed identity**, set the **Status** option to **On (2)**. Then use the **&#128427; Save (3)** icon to save your configuration change.
 
-    ![Screenshot of the Azure SQL server Identity page in the Azure portal.](./images/sqldb-identity1.png)
+    ![Screenshot of the Azure SQL server Identity page in the Azure portal.](./images/img-01-14.png)
 
-3. In the pane on the left, in the **Security** section, select **Networking**. Then, under **Firewall rules**, select the exception checkbox to **Allow Azure services and resources to access this server**.
+    >**Note:** Please wait until the configuration is saved.
 
-4. Use the **&#65291; Add a firewall rule** button to add a new firewall rule with the following settings:
+1. On the left navigation menu, under the **Security** section, select **Networking (1)**. Then, under **Firewall rules**, use the **&#65291; Add a firewall rule (2)** button to add a new firewall rule with the following settings, and select **OK**:
 
     | Rule name | Start IP | End IP |
     | -- | -- | -- |
-    | AllClients | 0.0.0.0 | 255.255.255.255 |
+    | **AllClients (6)** | 0.0.0.0 | 255.255.255.255 |
 
     > **Note**: This rule allows access to your server from any Internet-connected computer. We're enabling this to simplify the exercise, but in a production scenario, you should restrict access to only network addresses that need to use your databases.
 
-5. Use the **Save** button to save your configuration change:
+1. Select the **Exception** checkbox to **Allow Azure services and resources to access this server (4)**.
 
-    ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/sqldb-network1.png)
+1. Use the **Save (5)** button to save your configuration change:
+
+    ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/img-10-15.png)
 
 
 ## Task 3: Explore the transactional database
@@ -93,15 +99,17 @@ In this task, you will explore the transactional database which is created.
 
     ![](./images/lab4-task3-1.png)
 
-2. In the **AdventureWorksLT** database page, from the left navigation pane, select the **Query editor** tab and log in using SQL server authentication with the following credentials:
-    - **Login** SQLUser
-    - **Password**: *The password you specified when running the setup script.*
+2. In the **AdventureWorksLT** database page, from the left navigation pane, select the **Query editor (preview) (1)** tab and log in using **SQL authentication (2)** with the following credentials:
 
-    ![](./images/lab4-task3-2.png)
+    - **Login (3)** SQLUser
+    - **Password (4)**: *The password you specified when running the setup script.*
+    - Select **Connect (5)**
+
+        ![](./images/img-10-16.png)
 
 3. When the query editor opens, expand the **Tables** node and view the list of tables in the database. Note that they include tables in a **SalesLT** schema (for example, **SalesLT.Customer**).
 
-    ![](./images/lab4-task3-3.png)
+    ![](./images/img-10-17.png)
 
 ## Task 4: Configure Azure Synapse Link
 
@@ -119,9 +127,9 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
 
 3. On the left side of Synapse Studio, use the **&rsaquo;&rsaquo;** icon to expand the menu - this reveals the different pages within Synapse Studio.
 
-4. On the **Manage** page, on the **SQL pools** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655;** icon to start it; confirming that you want to resume it when prompted.
+4. On the **Manage (1)** page, on the **SQL pools (2)** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655; (3)** icon to start it; confirming that you want to resume it when prompted.
 
-    ![](./images/lab4-task4-2.png)
+    ![](./images/img-10-18.png)
 
 5. Wait for the SQL pool to resume. This can take a few minutes. You can use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it is ready.
 
@@ -131,7 +139,7 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
    
 2. In the **...** menu for the **sql*xxxxxxx*** database, select **New SQL script** > **Empty script**.
 
-    ![](./images/lab4-task4-3.png)
+    ![](./images/img-10-19.png)
 
 3. In the **SQL Script 1** pane, enter the following SQL code and use the  **&#9655; Run** button to run it.
 
@@ -148,21 +156,30 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
     - **Source type**: Azure SQL database
     - **Source linked service**: Select **+ New** from the dropdown to add a new linked service with the following settings (a new tab will be opened):
         - **Name**: SqlAdventureWorksLT (1)
+
         - **Description**: Connection to AdventureWorksLT database (2)
-        - **Connect via integration runtime**: AutoResolveIntegrationRuntime (3)
-        - **Version**:Legacy (4)
-        - **Connection String**: Selected (5)
-        - **From Azure subscription**: Selected(6)
-        - **Azure subscription**: *Select your Azure subscription*(7)
-        - **Server name**: *Select your **sqldbxxxxxxx** Azure SQL server*(8)
-        - **Database name**: AdventureWorksLT (9)
-        - **Authentication type**: SQL authentication (10)
-        - **User name**: SQLUser (11)
-        - **Password**: *The password you set when running the setup script* (12)
 
-        *Use the **Test Connection** (13) option to ensure your connection settings are correct before continuing! Afterwards, click **Create** (14).
+        - **Version**: 1.0 (Recommended) (3)
 
-        ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/cl4.1.png)
+        - **From Azure subscription**: Selected(4)
+
+        - **Azure subscription**: *Select your Azure subscription* (5)
+
+        - **Server name**: *Select your **sqldbxxxxxxx** Azure SQL server* (6)
+
+        - **Database name**: AdventureWorksLT (7)
+
+        - **Authentication type**: SQL authentication (8)
+
+        - **User name**: SQLUser (9)
+
+        - **Password**: *The password you set when running the setup script* (10)
+
+        - Use the **Test Connection** (11) option to ensure your connection settings are correct before continuing! Afterwards, click **Create** (12).
+
+            ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/img-10-20-11.png)
+
+            ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/img-10-21.png)
 
     - **Source tables**: Select the following tables:
         - **SalesLT.Customer**
@@ -171,7 +188,7 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
         - **SalesLT.SalesOrderHeader**
         - Click **Continue** to configure the following settings
 
-    > **Note**: Some target tables display an error due to the use of custom data types or because data in the source table is not compatible with the default structure type of *clustered columnstore index*.
+            > **Note**: Some target tables display an error due to the use of custom data types or because data in the source table is not compatible with the default structure type of *clustered columnstore index*.
 
     - **Target pool**: *Select your **sqlxxxxxxx** dedicated SQL pool*
     - Click **Continue** to configure the following settings
@@ -221,6 +238,8 @@ In this task, You will use your Azure Synapse Workspace to configure Synapse Lin
     ```
 
 4. Use the **&#9655; Run** button to run the script and view the results. The query is run against the replicated tables in the dedicated SQL pool and not the source database, enabling you to run analytical queries without impacting business applications.
+
+    ![Screenshot of the Azure SQL server Networking page in the Azure portal.](./images/img-10-20-113.png)
    
 5. When you're done, on the **Manage** page, pause the **sql*xxxxxxx*** dedicated SQL pool.
 
